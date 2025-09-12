@@ -822,8 +822,9 @@
                     <!-- Contact Form -->
                     <div class="bg-white rounded-2xl shadow-xl p-8 fade-in-up stagger-2">
                         <h3 class="text-2xl font-bold text-gray-900 mb-6">Sendu okkur línu</h3>
-                        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-6">
+                        <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-6">
                             <input type="hidden" name="form-name" value="contact">
+                            <input type="hidden" name="subject" value="REFORM: Ný skilaboð af vefsíðu">
                             <div class="hidden">
                                 <label>Ekki fylla út þennan reit: <input name="bot-field"></label>
                             </div>
