@@ -1,0 +1,5 @@
+[build]
+  # Publish the repository root as a static site
+  publish = "."
+
+
