@@ -35,6 +35,68 @@
         .ken-burns-effect {
             animation: kenBurns 25s ease-in-out infinite alternate;
         }
+
+        /* Hero image rotation styles */
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .hero-image.active {
+            opacity: 1;
+        }
+
+        /* Make entire FAQ card clickable */
+        details[open] summary {
+            margin-bottom: 0;
+        }
+        
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        details summary::marker {
+            display: none;
+        }
+
+        /* Ensure summary takes full width and is clickable */
+        details summary {
+            width: 100%;
+            display: block;
+        }
+
+        /* Specific styling for hero3 - coaches side by side */
+        #hero-image-3 {
+            object-position: center 10%;
+        }
+
+        /* Mobile-specific adjustments for hero3 - fill full hero height */
+        @media (max-width: 768px) {
+            #hero-image-3 {
+                object-position: center center;
+                object-fit: cover;
+                height: 100vh;
+            }
+        }
+
+        /* Extra small mobile adjustments for hero3 - fill full hero height */
+        @media (max-width: 480px) {
+            #hero-image-3 {
+                object-position: center center;
+                object-fit: cover;
+                height: 100vh;
+            }
+        }
+
+        /* Mobile-specific adjustments for program image - focus on left side */
+        @media (max-width: 768px) {
+            .program-image {
+                object-position: left center;
+            }
+        }
         
         @keyframes kenBurns {
             0% {
@@ -542,9 +604,11 @@
     <main>
         <!-- Hero Section -->
         <section class="relative h-screen flex items-center justify-center text-center overflow-hidden">
-            <!-- Hero Background Image with Ken Burns Effect -->
+            <!-- Hero Background Images with Rotation -->
             <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Gym and Fitness Background" class="w-full h-full object-cover ken-burns-effect">
+                <img id="hero-image-1" src="newimg/hero1.jpg" alt="REFORM Hero Image 1" class="w-full h-full object-cover ken-burns-effect hero-image active">
+                <img id="hero-image-2" src="newimg/hero2.jpg" alt="REFORM Hero Image 2" class="w-full h-full object-cover ken-burns-effect hero-image">
+                <img id="hero-image-3" src="newimg/hero3.jpg" alt="REFORM Hero Image 3" class="w-full h-full object-cover object-center ken-burns-effect hero-image">
             </div>
             <!-- Overlay for better text readability -->
             <div class="absolute inset-0 bg-black/50 z-10"></div>
@@ -903,10 +967,13 @@
                     
                     <!-- REFORM Lifestyle Info -->
                     <div class="mt-8 md:mt-12 bg-gray-800 rounded-xl p-6 md:p-8 fade-in-up stagger-8">
-                        <h3 class="text-xl md:text-2xl font-bold text-white text-center mb-4 md:mb-6">REFORM lifestyle</h3>
-                        
-                        <!-- Key Features -->
-                        <div class="space-y-3 md:space-y-4 mb-6 md:mb-8">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                            <!-- Content -->
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-bold text-white text-center lg:text-left mb-4 md:mb-6">REFORM lifestyle</h3>
+                                
+                                <!-- Key Features -->
+                                <div class="space-y-3 md:space-y-4 mb-6 md:mb-8">
                             <div class="flex items-center">
                                 <svg class="w-4 md:w-5 h-4 md:h-5 text-sky-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -950,9 +1017,16 @@
                             </div>
                         </div>
                         
-                        <!-- Pricing -->
-                        <div class="text-center">
-                            <p class="text-sky-400 font-bold text-lg md:text-xl">Verð per mánuð 13.990</p>
+                                <!-- Pricing -->
+                                <div class="text-center lg:text-left">
+                                    <p class="text-sky-400 font-bold text-lg md:text-xl">Verð per mánuð 13.990</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Image -->
+                            <div class="flex justify-center lg:justify-end">
+                                <img src="newimg/program.jpg" alt="REFORM Program" class="w-full max-w-sm lg:max-w-md rounded-2xl hover:scale-105 transition-transform duration-500 object-cover h-[28rem] lg:h-[32rem] program-image">
+                            </div>
                         </div>
                     </div>
                     
@@ -986,14 +1060,14 @@
                         </div>
                         
                         <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
-                            <img src="img/kolfinna_coach.png" alt="Kolfinna þjálfari" class="w-auto h-80 md:h-96 max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500 object-contain">
+                            <img src="newimg/kolfinna_coach.jpg" alt="Kolfinna þjálfari" class="w-auto h-80 md:h-96 max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500 object-contain">
                         </div>
                     </div>
                     
                     <!-- Coach 2: Kristinn -->
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start fade-in-up stagger-2">
                         <div class="order-1 flex justify-center lg:justify-start mt-6 md:mt-8">
-                            <img src="img/kristinn-jens_coach.png" alt="Kristinn þjálfari" class="w-auto h-80 md:h-96 max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500 object-contain">
+                            <img src="newimg/kristinn-jens_coach.jpg" alt="Kristinn þjálfari" class="w-auto h-80 md:h-96 max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500 object-contain">
                         </div>
                         
                         <div class="order-2">
@@ -1104,8 +1178,8 @@
                 </div>
                 <div class="space-y-4">
                     <!-- FAQ 1 -->
-                    <details class="bg-white p-6 rounded-lg shadow-sm group hover-lift hover-glow fade-in-up stagger-1">
-                        <summary class="flex justify-between items-center font-semibold cursor-pointer">
+                    <details class="bg-white p-6 rounded-lg shadow-sm group hover-lift hover-glow fade-in-up stagger-1 cursor-pointer">
+                        <summary class="flex justify-between items-center font-semibold cursor-pointer list-none w-full">
                             <span class="gradient-text">Fyrir hvaða aldur hentar REFORM?</span>
                             <span class="accordion-arrow transition-transform duration-300">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -1114,8 +1188,8 @@
                         <p class="text-gray-600 mt-4">REFORM hentar fólki á öllum aldri.</p>
                     </details>
                     <!-- FAQ 2 -->
-                    <details class="bg-white p-6 rounded-lg shadow-sm group hover-lift hover-glow fade-in-up stagger-2">
-                        <summary class="flex justify-between items-center font-semibold cursor-pointer">
+                    <details class="bg-white p-6 rounded-lg shadow-sm group hover-lift hover-glow fade-in-up stagger-2 cursor-pointer">
+                        <summary class="flex justify-between items-center font-semibold cursor-pointer list-none w-full">
                             <span class="gradient-text">Þarf ég að mæta eitthvert?</span>
                              <span class="accordion-arrow transition-transform duration-300">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -1124,8 +1198,8 @@
                         <p class="text-gray-600 mt-4">Nei, þú getur æft heima eða mætt í líkamsræktarstöð og öll fræðsla fer fram á netinu.</p>
                     </details>
                     <!-- FAQ 3 -->
-                    <details class="bg-white p-6 rounded-lg shadow-sm group hover-lift hover-glow fade-in-up stagger-3">
-                        <summary class="flex justify-between items-center font-semibold cursor-pointer">
+                    <details class="bg-white p-6 rounded-lg shadow-sm group hover-lift hover-glow fade-in-up stagger-3 cursor-pointer">
+                        <summary class="flex justify-between items-center font-semibold cursor-pointer list-none w-full">
                             <span class="gradient-text">Get ég sagt upp áskrift?</span>
                              <span class="accordion-arrow transition-transform duration-300">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -1134,8 +1208,8 @@
                         <p class="text-gray-600 mt-4">Í öllum áskriftum er hægt að segja upp með mánaðar fyrirvara.</p>
                     </details>
                     <!-- FAQ 4 -->
-                    <details class="bg-white p-6 rounded-lg shadow-sm group hover-lift hover-glow fade-in-up stagger-4">
-                        <summary class="flex justify-between items-center font-semibold cursor-pointer">
+                    <details class="bg-white p-6 rounded-lg shadow-sm group hover-lift hover-glow fade-in-up stagger-4 cursor-pointer">
+                        <summary class="flex justify-between items-center font-semibold cursor-pointer list-none w-full">
                             <span class="gradient-text">Get ég skráð mig í 90 daga REFORM aðferðina á meðan ég æfi aðra íþrótt?</span>
                              <span class="accordion-arrow transition-transform duration-300">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -1144,8 +1218,8 @@
                         <p class="text-gray-600 mt-4">Já, klárlega!</p>
                     </details>
                     <!-- FAQ 5 -->
-                    <details class="bg-white p-6 rounded-lg shadow-sm group hover-lift hover-glow fade-in-up stagger-5">
-                        <summary class="flex justify-between items-center font-semibold cursor-pointer">
+                    <details class="bg-white p-6 rounded-lg shadow-sm group hover-lift hover-glow fade-in-up stagger-5 cursor-pointer">
+                        <summary class="flex justify-between items-center font-semibold cursor-pointer list-none w-full">
                             <span class="gradient-text">Þarf ég að vera með bakgrunn í íþróttum eða annarri hreyfingu?</span>
                              <span class="accordion-arrow transition-transform duration-300">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -1415,6 +1489,37 @@
                 e.preventDefault();
                 e.target.value = e.target.value.substring(0, 3);
             }
+        });
+
+        // Hero image rotation
+        let currentHeroImage = 1;
+        const totalHeroImages = 3;
+        
+        function rotateHeroImages() {
+            // Remove active class from current image
+            document.getElementById(`hero-image-${currentHeroImage}`).classList.remove('active');
+            
+            // Move to next image
+            currentHeroImage = currentHeroImage === totalHeroImages ? 1 : currentHeroImage + 1;
+            
+            // Add active class to new image
+            document.getElementById(`hero-image-${currentHeroImage}`).classList.add('active');
+        }
+        
+        // Start rotation every 5 seconds
+        setInterval(rotateHeroImages, 5000);
+
+        // Make entire FAQ cards clickable
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqCards = document.querySelectorAll('details');
+            faqCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // Only toggle if clicking on the card itself, not on the summary
+                    if (e.target === this) {
+                        this.open = !this.open;
+                    }
+                });
+            });
         });
   </script>
 
