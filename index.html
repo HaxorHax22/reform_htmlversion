@@ -341,6 +341,11 @@
         }
         
         /* Mobile Menu Item Animations */
+        #mobile-menu a {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        
         #mobile-menu.show a {
             animation: slideInFromLeft 0.6s ease-out forwards;
         }
@@ -350,6 +355,13 @@
         #mobile-menu.show a:nth-child(3) { animation-delay: 0.3s; }
         #mobile-menu.show a:nth-child(4) { animation-delay: 0.4s; }
         #mobile-menu.show a:nth-child(5) { animation-delay: 0.5s; }
+        #mobile-menu.show a:nth-child(6) { animation-delay: 0.6s; }
+        #mobile-menu.show a:nth-child(7) { animation-delay: 0.7s; }
+        
+        /* CTA Button Animation */
+        #mobile-menu .w-full.max-w-sm.pt-4 a {
+            animation-delay: 0.8s;
+        }
         
         @keyframes slideInFromLeft {
             0% {
@@ -388,13 +400,14 @@
             </a>
             
             <!-- Desktop Navigation -->
-            <nav class="hidden md:flex items-center space-x-6">
-                <a href="#method" class="text-gray-600 hover:text-sky-500 transition-colors">Aðferðin</a>
-                <a href="#program" class="text-gray-600 hover:text-sky-500 transition-colors">Prógramm</a>
-                <a href="#coaches" class="text-gray-600 hover:text-sky-500 transition-colors">Þjálfarar</a>
-                <a href="#testimonials" class="text-gray-600 hover:text-sky-500 transition-colors">Umsagnir</a>
-                <a href="#faq" class="text-gray-600 hover:text-sky-500 transition-colors">FAQ</a>
-                <a href="#contact" class="bg-sky-500 text-white px-4 py-2 rounded-full hover:bg-sky-600 transition-colors text-sm font-semibold">Hafa samband</a>
+            <nav class="hidden md:flex items-center space-x-4 lg:space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-sky-500 transition-colors text-sm lg:text-base">Hvað er REFORM</a>
+                <a href="#method" class="text-gray-600 hover:text-sky-500 transition-colors text-sm lg:text-base">90 daga REFORM aðferðin</a>
+                <a href="#program" class="text-gray-600 hover:text-sky-500 transition-colors text-sm lg:text-base">Prógröm</a>
+                <a href="#coaches" class="text-gray-600 hover:text-sky-500 transition-colors text-sm lg:text-base">Um okkur</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-sky-500 transition-colors text-sm lg:text-base">Umsagnir</a>
+                <a href="#faq" class="text-gray-600 hover:text-sky-500 transition-colors text-sm lg:text-base">Algengar spurningar</a>
+                <a href="#contact" class="bg-sky-500 text-white px-4 py-2 rounded-full hover:bg-sky-600 transition-colors text-sm font-semibold">Skráning</a>
             </nav>
             
             <!-- Mobile Menu Button -->
@@ -420,20 +433,26 @@
             
             <nav class="flex flex-col items-center space-y-6 p-8 border-b-2 border-sky-200 shadow-2xl min-h-screen pt-24" style="background-color: #ffffff !important;">
                 <div class="w-full max-w-sm space-y-4">
+                    <a href="#about" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg">
+                        <span class="transition-all duration-300">Hvað er REFORM</span>
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-sky-500 transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
                     <a href="#method" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg">
-                        <span class="transition-all duration-300">Aðferðin</span>
+                        <span class="transition-all duration-300">90 daga REFORM aðferðin</span>
                         <svg class="w-5 h-5 text-gray-400 group-hover:text-sky-500 transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                         </svg>
                     </a>
                     <a href="#program" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg">
-                        <span class="transition-all duration-300">Prógramm</span>
+                        <span class="transition-all duration-300">Prógröm</span>
                         <svg class="w-5 h-5 text-gray-400 group-hover:text-sky-500 transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                         </svg>
                     </a>
                     <a href="#coaches" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg">
-                        <span class="transition-all duration-300">Þjálfarar</span>
+                        <span class="transition-all duration-300">Um okkur</span>
                         <svg class="w-5 h-5 text-gray-400 group-hover:text-sky-500 transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                         </svg>
@@ -445,7 +464,7 @@
                         </svg>
                     </a>
                     <a href="#faq" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg">
-                        <span class="transition-all duration-300">FAQ</span>
+                        <span class="transition-all duration-300">Algengar spurningar</span>
                         <svg class="w-5 h-5 text-gray-400 group-hover:text-sky-500 transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                         </svg>
@@ -454,10 +473,7 @@
                 
                 <div class="w-full max-w-sm pt-4 border-t border-gray-200">
                     <a href="#contact" class="flex items-center justify-center w-full px-8 py-4 bg-gradient-to-r from-sky-500 to-blue-600 text-white rounded-xl hover:from-sky-600 hover:to-blue-700 transition-all duration-500 font-semibold shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                        </svg>
-                        Hafðu samband
+                        Skráning
                     </a>
       </div>
       </nav>
@@ -538,7 +554,7 @@
                     Hreyfing · Næring · Svefn
                 </h1>
                 <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-100 fade-in-up stagger-2">
-                    Það er aldrei of seint að hefja vegferðina að því að verða besta útgáfan af sjálfum þér.
+                    Loksins allt á einum stað! Umbreyttu heilsunni þinni með REFORM aðferðinni
                 </p>
                 <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
                     <a href="#program" class="w-full sm:w-auto bg-sky-500 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-sky-600 transition-transform hover:scale-105 shadow-lg fade-in-up stagger-3 hover-lift">
@@ -559,43 +575,23 @@
                     <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600 fade-in-up stagger-1">Heildræn nálgun við heilsu og vellíðan sem hjálpar fólki að byggja upp varanlegan lífsstíl.</p>
                 </div>
                 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
-                    <!-- Left side: Main content -->
-                    <div class="space-y-4 fade-in-up stagger-2">
-                        <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-sky-500">
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Okkar markmið</h3>
-                            <p class="text-gray-700 text-sm">Við hjálpum fólki að ná heilsumarkmiðum sínum með því að einbeita okkur að fjórum grundvallarþáttum: hreyfingu, næringu, svefni og heilaheilsu.</p>
-                        </div>
-                        
-                        <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-blue-500">
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Okkar nálgun</h3>
-                            <p class="text-gray-700 text-sm">REFORM byggir á vísindalegum rannsóknum og reynslu. Við hjálpum þér að byggja upp heilbrigt samband við hreyfingu, mat og sjálfan þig.</p>
-                        </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-sky-500 fade-in-up stagger-2">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Okkar markmið</h3>
+                        <p class="text-gray-700 text-sm">REFORM er ekki enn eitt átakið heldur samfélag sem færir þér verkfæri sem hámarka þína heilsu. Við hjálpum þér að búa til góðar rótgrónar venjur sem efla þína heilsu og vellíðan og nýtast þér út lífið. Aðferðin leggur grunninn að þremur meginstoðum heilsu: hreyfing, næring og svefn.</p>
                     </div>
                     
-                    <!-- Right side: Additional content -->
-                    <div class="space-y-4 fade-in-up stagger-3">
-                        <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-emerald-500">
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Hvernig virkar þetta?</h3>
-                            <p class="text-gray-700 text-sm">Við byrjum á því að skilja þig og þín markmið, búum til sérsniðna áætlun og veitum stuðning í gegnum allt ferlið.</p>
-                        </div>
-                        
-                        <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-amber-500">
-                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Hver getur notað REFORM?</h3>
-                            <p class="text-gray-700 text-sm">REFORM hentar öllum, hvort sem þú ert byrjandi eða lengra komin/n. Við hittum þig þar sem þú ert staddur/stödd.</p>
-                        </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-sky-500 fade-in-up stagger-3">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Okkar nálgun</h3>
+                        <p class="text-gray-700 text-sm">Varanlegar breytingar gerast ekki á örfáum vikum. REFORM aðferðin er 90 daga ferðalag þar sem þú tekur raunhæf skref til að byggja upp varanlegar venjur. Þetta er ekki spretthlaup heldur langhlaup. Aðferðin okkar byggist á traustum grunni vísinda og margra ára reynslu. REFORM aðferðin er heilbrig og við leggjum engar áherslur á öfgar.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-sky-500 fade-in-up stagger-4">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Er REFORM fyrir þig?</h3>
+                        <p class="text-gray-700 text-sm">REFORM er fyrir þá sem eru komnir með nóg af því að leita og eru tilbúnir að leggja inn vinnuna til þess að tryggja heilbrigðari og betri framtíð. Hvort sem þú ert að taka þín fyrstu skref í hreyfingu eða að leita að nýrri leið til að bæta heilsuna.</p>
                     </div>
                 </div>
                 
-                <!-- Simple Call to action -->
-                <div class="text-center mt-12 fade-in-up stagger-4">
-                    <a href="#contact" class="inline-flex items-center gap-2 bg-sky-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-sky-600 transition-colors">
-                        <span>Byrjaðu þína REFORM ferð</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
-                </div>
             </div>
         </section>
 
@@ -603,102 +599,411 @@
         <section id="method" class="py-20 bg-sky-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold fade-in-up">Aðferðin Okkar</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold fade-in-up">Hvernig virkar 90 daga REFORM aðferðin?</h2>
                     <p class="mt-4 max-w-2xl mx-auto text-gray-600 fade-in-up stagger-1">Við fylgjum einföldu fjögurra skrefa ferli til að tryggja þinn árangur.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
                     <!-- Step 1 -->
-                    <div class="bg-white p-8 rounded-xl shadow-md hover-lift hover-glow fade-in-left stagger-1">
-                        <div class="text-3xl font-extrabold text-sky-200 mb-2 pulse-slow">01</div>
-                        <h4 class="text-xl font-bold mb-3">Byrjaðu einfalt</h4>
-                        <p class="text-gray-600">Fyrsta skrefið er alltaf einfalt. Við byrjum á stöðumati og setjum raunhæf markmið saman.</p>
+                    <div class="bg-white p-4 md:p-6 rounded-xl shadow-md hover-lift hover-glow fade-in-left stagger-1 flex flex-col h-full">
+                        <div class="text-2xl md:text-3xl font-extrabold text-sky-200 mb-2 md:mb-3 pulse-slow">01</div>
+                        <h4 class="text-base md:text-lg font-bold mb-2 md:mb-3 text-gray-900">RESET Vikur 1-3</h4>
+                        <p class="text-gray-600 text-xs md:text-sm leading-relaxed flex-grow">Núllstilling. Þú leggur grunninn að því að skapa nýjar venjur í hreyfingu og kynnist því hvað það er skemmtilegt að hreyfa sig!</p>
                     </div>
                     <!-- Step 2 -->
-                    <div class="bg-white p-8 rounded-xl shadow-md hover-lift hover-glow fade-in-left stagger-2">
-                        <div class="text-3xl font-extrabold text-sky-200 mb-2 pulse-slow">02</div>
-                        <h4 class="text-xl font-bold mb-3">Aðgerðaráætlun</h4>
-                        <p class="text-gray-600">Þú færð sérsniðna áætlun sem tekur mið af þínum þörfum, markmiðum og daglegu lífi.</p>
+                    <div class="bg-white p-4 md:p-6 rounded-xl shadow-md hover-lift hover-glow fade-in-left stagger-2 flex flex-col h-full">
+                        <div class="text-2xl md:text-3xl font-extrabold text-sky-200 mb-2 md:mb-3 pulse-slow">02</div>
+                        <h4 class="text-base md:text-lg font-bold mb-2 md:mb-3 text-gray-900">REBUILD Vikur 4-8</h4>
+                        <p class="text-gray-600 text-xs md:text-sm leading-relaxed flex-grow">Þú byggir ofan á grunninn með aukinni þekkingu og betri svefngæðum. Svefninn er mikilvægasta grunnstoð lífsins og hefur margvísleg áhrif á daglegar venjur.</p>
                     </div>
                     <!-- Step 3 -->
-                    <div class="bg-white p-8 rounded-xl shadow-md hover-lift hover-glow fade-in-left stagger-3">
-                        <div class="text-3xl font-extrabold text-sky-200 mb-2 pulse-slow">03</div>
-                        <h4 class="text-xl font-bold mb-3">Stuðningur</h4>
-                        <p class="text-gray-600">Þú ert ekki ein/n á þessari vegferð. Við veitum þér stuðning og aðhald í gegnum allt ferlið.</p>
+                    <div class="bg-white p-4 md:p-6 rounded-xl shadow-md hover-lift hover-glow fade-in-left stagger-3 flex flex-col h-full">
+                        <div class="text-2xl md:text-3xl font-extrabold text-sky-200 mb-2 md:mb-3 pulse-slow">03</div>
+                        <h4 class="text-base md:text-lg font-bold mb-2 md:mb-3 text-gray-900">REINFORCE Vikur 9-13</h4>
+                        <p class="text-gray-600 text-xs md:text-sm leading-relaxed flex-grow">Þú tekur heilsuna þína á næsta stig með næringu þar sem við einföldum hvernig þú lítur á hvernig best sé að borða fyrir þig.</p>
       </div>
                     <!-- Step 4 -->
-                    <div class="bg-white p-8 rounded-xl shadow-md hover-lift hover-glow fade-in-left stagger-4">
-                        <div class="text-3xl font-extrabold text-sky-200 mb-2 pulse-slow">04</div>
-                        <h4 class="text-xl font-bold mb-3">Mælanlegur árangur</h4>
-                        <p class="text-gray-600">Við fylgjumst með árangri þínum og aðlögum áætlunina eftir þörfum til að tryggja stöðugar framfarir.</p>
+                    <div class="bg-white p-4 md:p-6 rounded-xl shadow-md hover-lift hover-glow fade-in-left stagger-4 flex flex-col h-full">
+                        <div class="text-2xl md:text-3xl font-extrabold text-sky-200 mb-2 md:mb-3 pulse-slow">04</div>
+                        <h4 class="text-base md:text-lg font-bold mb-2 md:mb-3 text-gray-900">NÝTT UPPHAF</h4>
+                        <p class="text-gray-600 text-xs md:text-sm leading-relaxed flex-grow">Í þessu skrefi hefur þú byggt upp sterkan grunn sem fylgir þér áfram. Árangurinn birtist í meiri orku, betri svefni og sterkari líkama og hugarfari. Framhaldið er í REFORM Lifestyle þar sem venjur skila enn meiri árangri.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-        <!-- Program Teaser Section -->
-        <section id="program" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="bg-gray-900 text-white rounded-2xl p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-8">
-                    <div class="lg:w-1/2 text-center lg:text-left">
-                        <h2 class="text-3xl md:text-4xl font-bold text-sky-400">90 Daga REFORM Prógrammið</h2>
-                        <p class="mt-4 text-gray-300 text-lg">Okkar vinsælasta prógramm sem hefur hjálpað hundruðum að ná framúrskarandi árangri. Þetta er ekki skyndilausn, heldur lífsstílsbreyting.</p>
-                        <ul class="mt-6 space-y-3 text-left inline-block">
-                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Sérsniðin þjálfun og næringaráætlun</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Vikuleg eftirfylgni með þjálfara</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Aðgangur að lokuðum stuðningshóp</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Fræðsluefni um heilsu og vellíðan</li>
-                        </ul>
-                        <div class="mt-8">
-                            <a href="#contact" class="bg-sky-500 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-sky-600 transition-transform hover:scale-105 shadow-lg">Skrá mig núna</a>
-                        </div>
-                    </div>
-                    <div class="lg:w-1/2 mt-8 lg:mt-0">
-                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Fólk að æfa og þjálfa í líkamsrækt" class="w-full h-auto rounded-xl shadow-2xl object-cover">
-                    </div>
+      
+      <!-- Call to action -->
+      <div class="text-center mt-12 fade-in-up stagger-5">
+          <a href="#contact" class="inline-flex items-center gap-2 bg-sky-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-sky-600 transition-colors">
+              <span>Byrjaðu þína REFORM ferð</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+              </svg>
+          </a>
       </div>
     </div>
   </section>
 
-        <!-- Coaches Section -->
-        <section id="coaches" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold fade-in-up">Þjálfararnir</h2>
-                    <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-600 fade-in-up stagger-1">Hittu fólkið sem mun leiða þig áfram á þinni vegferð.</p>
+        <!-- Program Comparison Section -->
+        <section id="program" class="py-12 md:py-20 bg-white">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="bg-gray-900 text-white rounded-2xl p-6 md:p-8 lg:p-12 fade-in-up">
+                    <div class="text-center mb-6 md:mb-8 fade-in-up stagger-1">
+                        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-sky-400">Prógröm</h2>
+                        <p class="mt-3 md:mt-4 text-gray-300 text-sm md:text-base lg:text-lg max-w-4xl mx-auto">90 daga REFORM aðferðin hefur hjálpað einstaklingum að ná stórum heilsufarslegum markmiðum til lengri tíma. Hægt er velja hefðbundna eða persónulega nálgun eftir því hvað hentar þér.</p>
+                    </div>
+                    
+                    <!-- Mobile Card Layout -->
+                    <div class="block md:hidden space-y-4 fade-in-up stagger-2">
+                        <!-- Hefðbundin nálgun Card -->
+                        <div class="bg-gray-800 rounded-xl p-6 fade-in-up stagger-3">
+                            <h3 class="text-lg font-bold text-sky-400 text-center mb-4">Hefðbundin nálgun</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-300 text-sm">Æfingaáætlun í appi</span>
+                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-300 text-sm">Ítarlegar útskýringar og myndbönd</span>
+                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-300 text-sm">Hreyfing - Næring - Svefn námskeið</span>
+                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-300 text-sm">REFORM samfélagið á Facebook</span>
+                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-300 text-sm">Aðgangur að þjálfurum</span>
+                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-300 text-sm">Æfingaáætlun eftir þörfum</span>
+                                    <span class="text-gray-400 text-sm">-</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-300 text-sm">Sérsniðin næringarþjálfun</span>
+                                    <span class="text-gray-400 text-sm">-</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-300 text-sm">Vikuleg eftirfylgni</span>
+                                    <span class="text-gray-400 text-sm">-</span>
+                                </div>
+                                <div class="flex items-center justify-between pt-3 border-t border-gray-700">
+                                    <span class="text-white font-bold">Verð per mánuð</span>
+                                    <span class="text-sky-400 font-bold text-lg">34.990</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Persónuleg nálgun Card -->
+                        <div class="bg-gray-800 rounded-xl p-6 fade-in-up stagger-4">
+                            <h3 class="text-lg font-bold text-sky-400 text-center mb-4">Persónuleg nálgun</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-300 text-sm">Æfingaáætlun í appi</span>
+                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-300 text-sm">Ítarlegar útskýringar og myndbönd</span>
+                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-300 text-sm">Hreyfing - Næring - Svefn námskeið</span>
+                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-300 text-sm">REFORM samfélagið á Facebook</span>
+                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-300 text-sm">Aðgangur að þjálfurum</span>
+                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-300 text-sm">Æfingaáætlun eftir þörfum</span>
+                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-300 text-sm">Sérsniðin næringarþjálfun</span>
+                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-300 text-sm">Vikuleg eftirfylgni</span>
+                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex items-center justify-between pt-3 border-t border-gray-700">
+                                    <span class="text-white font-bold">Verð per mánuð</span>
+                                    <span class="text-sky-400 font-bold text-lg">84.990</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Desktop Table Layout -->
+                    <div class="hidden md:block overflow-x-auto fade-in-up stagger-2">
+                        <table class="w-full min-w-[600px]">
+                            <thead class="bg-gray-800">
+                                <tr class="fade-in-up stagger-3">
+                                    <th class="px-4 lg:px-6 py-4 text-left text-sm font-semibold text-white">90 daga REFORM aðferðin</th>
+                                    <th class="px-4 lg:px-6 py-4 text-center text-sm font-semibold text-white">Hefðbundin nálgun</th>
+                                    <th class="px-4 lg:px-6 py-4 text-center text-sm font-semibold text-white">Persónuleg nálgun</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-700">
+                                <tr class="hover:bg-gray-800 transition-colors fade-in-up stagger-4">
+                                    <td class="px-4 lg:px-6 py-3 lg:py-4 text-sm text-gray-300">Æfingaáætlun í appi</td>
+                                    <td class="px-4 lg:px-6 py-3 lg:py-4 text-center">
+                                        <svg class="w-4 lg:w-5 h-4 lg:h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </td>
+                                    <td class="px-4 lg:px-6 py-3 lg:py-4 text-center">
+                                        <svg class="w-4 lg:w-5 h-4 lg:h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-800 transition-colors fade-in-up stagger-5">
+                                    <td class="px-6 py-4 text-sm text-gray-300">Ítarlegar útskýringar og myndbönd af öllum æfingunum í appinu</td>
+                                    <td class="px-6 py-4 text-center">
+                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-800 transition-colors">
+                                    <td class="px-6 py-4 text-sm text-gray-300">Hreyfing - Næring - Svefn rafrænt námskeið</td>
+                                    <td class="px-6 py-4 text-center">
+                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-800 transition-colors">
+                                    <td class="px-6 py-4 text-sm text-gray-300">REFORM samfélagið á Facebook</td>
+                                    <td class="px-6 py-4 text-center">
+                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-800 transition-colors">
+                                    <td class="px-6 py-4 text-sm text-gray-300">Aðgangur að þjálfurum</td>
+                                    <td class="px-6 py-4 text-center">
+                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-800 transition-colors">
+                                    <td class="px-6 py-4 text-sm text-gray-300">Æfingaáætlun eftir þínum þörfum og markmiðum</td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span class="text-gray-400 text-lg">-</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-800 transition-colors">
+                                    <td class="px-6 py-4 text-sm text-gray-300">Sérsniðin næringarþjálfun</td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span class="text-gray-400 text-lg">-</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-800 transition-colors">
+                                    <td class="px-6 py-4 text-sm text-gray-300">Vikuleg eftirfylgni með þjálfara</td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span class="text-gray-400 text-lg">-</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-800 transition-colors">
+                                    <td class="px-6 py-4 text-sm font-semibold text-white">Verð per mánuð</td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span class="text-sky-400 font-bold text-lg">34.990</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span class="text-sky-400 font-bold text-lg">84.990</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                     <!-- Call to Action for 90-day Program -->
+                     <div class="text-center mt-8 fade-in-up stagger-6">
+                        <a href="#contact" class="bg-sky-500 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-sky-600 transition-transform hover:scale-105 shadow-lg">Skrá mig í 90 daga REFORM</a>
+                    </div>
+                    
+                    <!-- Additional Information -->
+                    <div class="mt-8 space-y-3 text-center fade-in-up stagger-7">
+                        <p class="text-gray-300 text-sm">Við tökum aðeins inn 20 manns á hverju tímabili*</p>
+                        <p class="text-gray-300 text-sm">Eftir 90 daga REFORM aðferðina er REFORM lifestyle.</p>
+                        <p class="text-gray-300 text-sm">Ef þú ert ekki tilbúinn í 90 daga REFORM aðferðina þá er tilvalið að byrja á því að prufa REFORM lifestyle.</p>
+                    </div>
+                    
+                   
+                    
+                    <!-- REFORM Lifestyle Info -->
+                    <div class="mt-8 md:mt-12 bg-gray-800 rounded-xl p-6 md:p-8 fade-in-up stagger-8">
+                        <h3 class="text-xl md:text-2xl font-bold text-white text-center mb-4 md:mb-6">REFORM lifestyle</h3>
+                        
+                        <!-- Key Features -->
+                        <div class="space-y-3 md:space-y-4 mb-6 md:mb-8">
+                            <div class="flex items-center">
+                                <svg class="w-4 md:w-5 h-4 md:h-5 text-sky-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-300 text-sm md:text-base">Æfingaáætlun í appi</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-4 md:w-5 h-4 md:h-5 text-sky-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-300 text-sm md:text-base">Myndbönd og ítarlegar útskýringar af öllum æfingum í appi</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-4 md:w-5 h-4 md:h-5 text-sky-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-300 text-sm md:text-base">REFORM samfélagið á Facebook</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Weekly Content -->
+                        <div class="mb-6 md:mb-8">
+                            <h4 class="text-base md:text-lg font-bold text-white mb-3 md:mb-4">Í hverri viku koma nýjar:</h4>
+                            <div class="space-y-2">
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-sky-400 rounded-full mr-3 flex-shrink-0"></div>
+                                    <span class="text-gray-300 text-sm md:text-base">3x styrktaræfingar - heima</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-sky-400 rounded-full mr-3 flex-shrink-0"></div>
+                                    <span class="text-gray-300 text-sm md:text-base">3x styrktaræfingar - líkamsræktarstöð</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-sky-400 rounded-full mr-3 flex-shrink-0"></div>
+                                    <span class="text-gray-300 text-sm md:text-base">2x öræfingar ~15 mín</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 bg-sky-400 rounded-full mr-3 flex-shrink-0"></div>
+                                    <span class="text-gray-300 text-sm md:text-base">2x liðleika æfingar ~15 mín</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Pricing -->
+                        <div class="text-center">
+                            <p class="text-sky-400 font-bold text-lg md:text-xl">Verð per mánuð 13.990</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Call to Action -->
+                    <div class="text-center mt-8 fade-in-up stagger-9">
+                        <a href="#contact" class="bg-sky-500 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-sky-600 transition-transform hover:scale-105 shadow-lg">Skrá mig núna</a>
+                    </div>
                 </div>
-                <div class="space-y-20 max-w-6xl mx-auto">
+            </div>
+        </section>
+
+        <!-- Coaches Section -->
+        <section id="coaches" class="py-12 md:py-20 bg-gray-50">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold fade-in-up">Um okkur</h2>
+                    <p class="mt-4 md:mt-6 max-w-3xl mx-auto text-base md:text-lg text-gray-600 fade-in-up stagger-1">REFORM byggir á sameinuðum grunni þekkingar, reynslu og krafta okkar tveggja.</p>
+                </div>
+                <div class="space-y-16 md:space-y-20 max-w-6xl mx-auto">
                     <!-- Coach 1: Kolfinna -->
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start fade-in-up stagger-1">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start fade-in-up stagger-1">
                         <div class="order-2 lg:order-1">
-                            <h3 class="text-3xl font-bold text-gray-900 mb-3">Kolfinna</h3>
-                            <p class="text-sky-600 font-semibold text-lg mb-6">Þjálfari · Hreyfing & Næring</p>
+                            <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2 md:mb-3">Kolfinna</h3>
+                            <p class="text-sky-600 font-semibold text-base md:text-lg mb-4 md:mb-6">Þjálfari</p>
                             
-                            <div class="space-y-4 text-gray-700 leading-relaxed">
-                                <p>Kolfinna hefur brennandi áhuga á heildrænni heilsu og hefur hjálpað fólki að umbreyta lífi sínu í yfir 10 ár. Hennar nálgun byggir á vísindum, samkennd og reynslu.</p>
-                                <p>Hún sérhæfir sig í að hjálpa fólki að byggja upp heilbrigt samband við mat og hreyfingu. Kolfinna trúir á einföld lausn sem byggja á sjálfstæði og varanlegum breytingum.</p>
-                                <p>Hún hefur hjálpað hundruðum að ná markmiðum sínum og byggja upp heilbrigt lífsstíl sem hentar þeim og þeirra aðstæðum.</p>
+                            <div class="space-y-3 md:space-y-4 text-gray-700 leading-relaxed text-sm md:text-base">
+                                <p>Ég er menntuð í sálfræði (B. Sc.) og taugasálfræði (M.Sc) og er ég að ljúka doktorsprófi úr Háskólanum í Reykjavík í sálfræði með sérhæfingu á hugrænni getu einstaklinga með öndunartruflanir í svefni og kæfisvefn.</p>
+                                <p>Ég hef alltaf haft brennandi áhuga á hreyfingu og stundað allskyns íþróttir, frá fimleikum yfir í dans, kraftlyftingar, yoga, muay-thai, cross-fit og functional fitness sem ég stunda í dag. Ég hóf þjálfunarferilinn minn árið 2019 og hef verið að þjálfa fjölbreytta hópa síðan, þar á meðal nýbakaðar mæður og fólk 60+.</p>
+                                <p>Með minni heildrænu nálgun hef ég stutt fjölda einstaklinga í að ná markmiðum sínum að móta heilbrigðan lífsstíl sem hæfir þeirra þörfum og aðstæðum.</p>
                             </div>
                         </div>
                         
                         <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
-                            <img src="img/kolfinna_coach.png" alt="Kolfinna þjálfari" class="w-auto h-96 max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500 object-contain">
+                            <img src="img/kolfinna_coach.png" alt="Kolfinna þjálfari" class="w-auto h-80 md:h-96 max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500 object-contain">
                         </div>
                     </div>
                     
                     <!-- Coach 2: Kristinn -->
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start fade-in-up stagger-2">
-                        <div class="order-1 flex justify-center lg:justify-start">
-                            <img src="img/kristinn-jens_coach.png" alt="Kristinn þjálfari" class="w-auto h-96 max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500 object-contain">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start fade-in-up stagger-2">
+                        <div class="order-1 flex justify-center lg:justify-start mt-6 md:mt-8">
+                            <img src="img/kristinn-jens_coach.png" alt="Kristinn þjálfari" class="w-auto h-80 md:h-96 max-w-full rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500 object-contain">
                         </div>
                         
                         <div class="order-2">
-                            <h3 class="text-3xl font-bold text-gray-900 mb-3">Kristinn Jens</h3>
-                            <p class="text-sky-600 font-semibold text-lg mb-6">Þjálfari · Hreyfing & Svefn</p>
+                            <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2 md:mb-3">Kristinn Jens</h3>
+                            <p class="text-sky-600 font-semibold text-base md:text-lg mb-4 md:mb-6">Þjálfari · Hreyfing & Svefn</p>
                             
-                            <div class="space-y-4 text-gray-700 leading-relaxed">
-                                <p>Kristinn sérhæfir sig í frammistöðu og hreyfigæðum. Hann hjálpar þér að verða sterkari, hraustari og hreyfanlegri á öruggan og skilvirkan hátt.</p>
-                                <p>Hann notar kerfisbundna nálgun með reglulegri eftirfylgni og aðlögun áætlana. Kristinn leggur áherslu á svefnhegðun fyrir endurnæringu og framfarir.</p>
-                                <p>Með bakgrunn í lífeðlisfræði og svefnrannsóknum hjálpar Kristinn þér að bæta gæði svefns og endurnæringu fyrir betri árangur.</p>
+                            <div class="space-y-3 md:space-y-4 text-gray-700 leading-relaxed text-sm md:text-base">
+                                <p>Ég er með B.Sc. í íþróttafræði og M.Ed. í heilsuþjálfun og kennslu. Í náminu fékk ég sérstakan áhuga á lífeðlisfræði, lýðheilsu og þjálffræði – hvernig líkaminn bregst við mismunandi þjálfun og hvernig hægt er að hámarka árangur með markvissum æfingaáætlunum og lífstílsbreytingum.</p>
+                                <p>Ég hef brennandi áhuga á heilsu og því hvernig hreyfing, næring og svefn vinna saman til að skapa sterkan grunn fyrir jafnvægi og vellíðan. Ég hef þjálfað fjölbreyttan hóp einstaklinga með það að markmiði að efla styrk, heilbrigði og hreyfigæði á skilvirkan og öruggan hátt.</p>
+                                <p>Mín nálgun byggir á vísindalegri þekkingu, reynslu og stöðugri leit að nýrri og betri aðferðum í tengslum við heilbrigt líferni. Ég legg áherslu á gæði og tækni umfram magn og trúi að heilbrigði sé best byggt upp með einföldum en árangursríkum skrefum.</p>
                             </div>
                         </div>
       </div>
@@ -707,62 +1012,84 @@
   </section>
 
         <!-- Testimonials Section -->
-        <section id="testimonials" class="py-20 bg-white overflow-hidden">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold fade-in-up">Það sem viðskiptavinir segja</h2>
-                    <p class="mt-4 max-w-2xl mx-auto text-gray-600 fade-in-up stagger-1">Árangurssögur sem veita innblástur.</p>
+        <section id="testimonials" class="py-12 md:py-20 bg-white overflow-hidden">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center mb-8 md:mb-12">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold fade-in-up">Það sem viðskiptavinir segja</h2>
+                    <p class="mt-3 md:mt-4 max-w-2xl mx-auto text-sm md:text-base text-gray-600 fade-in-up stagger-1">Árangurssögur sem veita innblástur.</p>
                 </div>
                 
                 <div class="testimonials-carousel relative">
-                    <div class="testimonials-track flex gap-8 animate-scroll">
+                    <div class="testimonials-track flex gap-6 lg:gap-8 animate-scroll">
                         <!-- Testimonial 1 -->
-                        <div class="testimonial-card bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[400px] h-[200px]">
-                            <p class="text-gray-700 italic text-lg leading-relaxed">"REFORM breytti öllu fyrir mig. Ég hef meiri orku en nokkru sinni fyrr og líður betur bæði andlega og líkamlega. Mæli 100% með!"</p>
-                            <p class="mt-4 font-bold text-right gradient-text text-lg">- Helga</p>
+                        <div class="testimonial-card bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[420px] h-[240px] flex flex-col justify-center">
+                            <p class="text-gray-700 italic text-base leading-relaxed">"Reform kom mér aftur á stað sem ég var áður á og þekki vel. Ég fann rytmann aftur og mesti ávinningurinn var að komast aftur í gang í fastri umgjörð"</p>
                         </div>
                         
                         <!-- Testimonial 2 -->
-                        <div class="testimonial-card bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[400px] h-[200px]">
-                            <p class="text-gray-700 italic text-lg leading-relaxed">"Ég var búin að próba allt en ekkert virkaði. Nálgunin hjá Kolfinnu og Kristni er svo raunhæf og studd af frábæru fólki. Loksins er ég komin á rétta braut."</p>
-                            <p class="mt-4 font-bold text-right gradient-text text-lg">- Jóna</p>
+                        <div class="testimonial-card bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[420px] h-[240px] flex flex-col justify-center">
+                            <p class="text-gray-700 italic text-base leading-relaxed">"Þetta prógram hefur hvatt mig til að koma inn góðum venjum og minnir mig á að allt telur þegar kemur að hreyfingu, það er ekki allt eða ekkert. Er búin að vera ótrúlega ánægð með þetta og þetta er svo vandað og vel gert hjá ykkur! Snillingar!"</p>
                         </div>
                         
                         <!-- Testimonial 3 -->
-                        <div class="testimonial-card bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[400px] h-[200px]">
-                            <p class="text-gray-700 italic text-lg leading-relaxed">"Ég lærði svo mikið um næringu og hvernig ég get æft á skilvirkari hátt. Þetta er besta fjárfesting sem ég hef gert í sjálfum mér."</p>
-                            <p class="mt-4 font-bold text-right gradient-text text-lg">- Lárus</p>
+                        <div class="testimonial-card bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[420px] h-[240px] flex flex-col justify-center">
+                            <p class="text-gray-700 italic text-base leading-relaxed">"Ég er ánægðust með að þetta prógram kom mér af stað í hreyfingu og ég lærði að ég get gert styrktaræfingar heima án þess að það sé brjáluð fyrirhöfn"</p>
                         </div>
                         
                         <!-- Testimonial 4 -->
-                        <div class="testimonial-card bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[300px] h-[200px]">
-                            <p class="text-gray-700 italic text-lg leading-relaxed">"Stuðningurinn í hópnum er ómetanlegur. Það er svo gott að vera í þessu með öðrum sem eru á svipaðri vegferð. Takk fyrir mig!"</p>
-                            <p class="mt-4 font-bold text-right gradient-text text-lg">- Vala</p>
+                        <div class="testimonial-card bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[420px] h-[240px] flex flex-col justify-center">
+                            <p class="text-gray-700 italic text-base leading-relaxed">"Aukinn styrkur og þol. Líður vel í skrokknum og hef meira úthald en áður. Mjög ánægð með námskeiðið og uppleggið hjá ykkur"</p>
+                        </div>
+                        
+                        <!-- Testimonial 5 -->
+                        <div class="testimonial-card bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[420px] h-[240px] flex flex-col justify-center">
+                            <p class="text-gray-700 italic text-base leading-relaxed">"Er ótrúlega ánægð með þetta prógramm hjá ykkur, mjög þægilegt og einmitt hægt að gera hvar sem er"</p>
+                        </div>
+                        
+                        <!-- Testimonial 6 -->
+                        <div class="testimonial-card bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[420px] h-[240px] flex flex-col justify-center">
+                            <p class="text-gray-700 italic text-base leading-relaxed">"Þetta var akkúrat það sem ég þurfti á þessum tímapunkti til að koma mér af stað í hreyfingu"</p>
+                        </div>
+                        
+                        <!-- Testimonial 7 -->
+                        <div class="testimonial-card bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[420px] h-[240px] flex flex-col justify-center">
+                            <p class="text-gray-700 italic text-base leading-relaxed">"Ég finn til löngunar að taka þetta fastari tökum ekki af því að ég verð að gera það heldur því mig langar til þess"</p>
                         </div>
                         
                         <!-- Duplicate testimonials for seamless loop -->
                         <!-- Testimonial 1 (duplicate) -->
-                        <div class="testimonial-card bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[300px] h-[200px]">
-                            <p class="text-gray-700 italic text-lg leading-relaxed">"REFORM breytti öllu fyrir mig. Ég hef meiri orku en nokkru sinni fyrr og líður betur bæði andlega og líkamlega. Mæli 100% með!"</p>
-                            <p class="mt-4 font-bold text-right gradient-text text-lg">- Helga</p>
+                        <div class="testimonial-card bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[420px] h-[240px] flex flex-col justify-center">
+                            <p class="text-gray-700 italic text-base leading-relaxed">"Reform kom mér aftur á stað sem ég var áður á og þekki vel. Ég fann rytmann aftur og mesti ávinningurinn var að komast aftur í gang í fastri umgjörð"</p>
                         </div>
                         
                         <!-- Testimonial 2 (duplicate) -->
-                        <div class="testimonial-card bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[300px] h-[200px]">
-                            <p class="text-gray-700 italic text-lg leading-relaxed">"Ég var búin að próba allt en ekkert virkaði. Nálgunin hjá Kolfinnu og Kristni er svo raunhæf og studd af frábæru fólki. Loksins er ég komin á rétta braut."</p>
-                            <p class="mt-4 font-bold text-right gradient-text text-lg">- Jóna</p>
+                        <div class="testimonial-card bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[420px] h-[240px] flex flex-col justify-center">
+                            <p class="text-gray-700 italic text-base leading-relaxed">"Þetta prógram hefur hvatt mig til að koma inn góðum venjum og minnir mig á að allt telur þegar kemur að hreyfingu, það er ekki allt eða ekkert. Er búin að vera ótrúlega ánægð með þetta og þetta er svo vandað og vel gert hjá ykkur! Snillingar!"</p>
                         </div>
                         
                         <!-- Testimonial 3 (duplicate) -->
-                        <div class="testimonial-card bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[300px] h-[200px]">
-                            <p class="text-gray-700 italic text-lg leading-relaxed">"Ég lærði svo mikið um næringu og hvernig ég get æft á skilvirkari hátt. Þetta er besta fjárfesting sem ég hef gert í sjálfum mér."</p>
-                            <p class="mt-4 font-bold text-right gradient-text text-lg">- Lárus</p>
+                        <div class="testimonial-card bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[420px] h-[240px] flex flex-col justify-center">
+                            <p class="text-gray-700 italic text-base leading-relaxed">"Ég er ánægðust með að þetta prógram kom mér af stað í hreyfingu og ég lærði að ég get gert styrktaræfingar heima án þess að það sé brjáluð fyrirhöfn"</p>
                         </div>
                         
                         <!-- Testimonial 4 (duplicate) -->
-                        <div class="testimonial-card bg-gray-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[300px] h-[200px]">
-                            <p class="text-gray-700 italic text-lg leading-relaxed">"Stuðningurinn í hópnum er ómetanlegur. Það er svo gott að vera í þessu með öðrum sem eru á svipaðri vegferð. Takk fyrir mig!"</p>
-                            <p class="mt-4 font-bold text-right gradient-text text-lg">- Vala</p>
+                        <div class="testimonial-card bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[420px] h-[240px] flex flex-col justify-center">
+                            <p class="text-gray-700 italic text-base leading-relaxed">"Aukinn styrkur og þol. Líður vel í skrokknum og hef meira úthald en áður. Mjög ánægð með námskeiðið og uppleggið hjá ykkur"</p>
+                        </div>
+                        
+                        <!-- Testimonial 5 (duplicate) -->
+                        <div class="testimonial-card bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[420px] h-[240px] flex flex-col justify-center">
+                            <p class="text-gray-700 italic text-base leading-relaxed">"Er ótrúlega ánægð með þetta prógramm hjá ykkur, mjög þægilegt og einmitt hægt að gera hvar sem er"</p>
+                        </div>
+                        
+                        <!-- Testimonial 6 (duplicate) -->
+                        <div class="testimonial-card bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[420px] h-[240px] flex flex-col justify-center">
+                            <p class="text-gray-700 italic text-base leading-relaxed">"Þetta var akkúrat það sem ég þurfti á þessum tímapunkti til að koma mér af stað í hreyfingu"</p>
+                        </div>
+                        
+                        <!-- Testimonial 7 (duplicate) -->
+                        <div class="testimonial-card bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-[420px] h-[240px] flex flex-col justify-center">
+                            <p class="text-gray-700 italic text-base leading-relaxed">"Ég finn til löngunar að taka þetta fastari tökum ekki af því að ég verð að gera það heldur því mig langar til þess"</p>
                         </div>
                     </div>
       </div>
@@ -779,32 +1106,52 @@
                     <!-- FAQ 1 -->
                     <details class="bg-white p-6 rounded-lg shadow-sm group hover-lift hover-glow fade-in-up stagger-1">
                         <summary class="flex justify-between items-center font-semibold cursor-pointer">
-                            <span class="gradient-text">Hentar þetta prógramm fyrir byrjendur?</span>
+                            <span class="gradient-text">Fyrir hvaða aldur hentar REFORM?</span>
                             <span class="accordion-arrow transition-transform duration-300">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                             </span>
                         </summary>
-                        <p class="text-gray-600 mt-4">Já, algjörlega! Við sérsníðum allar áætlanir að þínum forsendum, hvort sem þú ert að stíga þín fyrstu skref eða ert vanur/vön hreyfingu. Markmiðið er að hitta þig þar sem þú ert staddur/stödd.</p>
+                        <p class="text-gray-600 mt-4">REFORM hentar fólki á öllum aldri.</p>
                     </details>
                     <!-- FAQ 2 -->
                     <details class="bg-white p-6 rounded-lg shadow-sm group hover-lift hover-glow fade-in-up stagger-2">
                         <summary class="flex justify-between items-center font-semibold cursor-pointer">
-                            <span class="gradient-text">Þarf ég aðgang að líkamsræktarstöð?</span>
+                            <span class="gradient-text">Þarf ég að mæta eitthvert?</span>
                              <span class="accordion-arrow transition-transform duration-300">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                             </span>
                         </summary>
-                        <p class="text-gray-600 mt-4">Nei, það er ekki nauðsynlegt. Við getum útbúið áætlun sem þú getur gert heima með lágmarksbúnaði eða eingöngu eigin líkamsþyngd. Við vinnum með það sem þú hefur aðgang að.</p>
+                        <p class="text-gray-600 mt-4">Nei, þú getur æft heima eða mætt í líkamsræktarstöð og öll fræðsla fer fram á netinu.</p>
                     </details>
                     <!-- FAQ 3 -->
                     <details class="bg-white p-6 rounded-lg shadow-sm group hover-lift hover-glow fade-in-up stagger-3">
                         <summary class="flex justify-between items-center font-semibold cursor-pointer">
-                            <span class="gradient-text">Hvað ef ég hef sérþarfir varðandi mataræði?</span>
+                            <span class="gradient-text">Get ég sagt upp áskrift?</span>
                              <span class="accordion-arrow transition-transform duration-300">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                             </span>
                         </summary>
-                        <p class="text-gray-600 mt-4">Ekkert mál. Við tökum fullt tillit til ofnæmis, óþols, matarvenja (t.d. grænmetisæta) og annarra sérþarfa þegar við setjum saman næringaráætlunina þína.</p>
+                        <p class="text-gray-600 mt-4">Í öllum áskriftum er hægt að segja upp með mánaðar fyrirvara.</p>
+                    </details>
+                    <!-- FAQ 4 -->
+                    <details class="bg-white p-6 rounded-lg shadow-sm group hover-lift hover-glow fade-in-up stagger-4">
+                        <summary class="flex justify-between items-center font-semibold cursor-pointer">
+                            <span class="gradient-text">Get ég skráð mig í 90 daga REFORM aðferðina á meðan ég æfi aðra íþrótt?</span>
+                             <span class="accordion-arrow transition-transform duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </span>
+                        </summary>
+                        <p class="text-gray-600 mt-4">Já, klárlega!</p>
+                    </details>
+                    <!-- FAQ 5 -->
+                    <details class="bg-white p-6 rounded-lg shadow-sm group hover-lift hover-glow fade-in-up stagger-5">
+                        <summary class="flex justify-between items-center font-semibold cursor-pointer">
+                            <span class="gradient-text">Þarf ég að vera með bakgrunn í íþróttum eða annarri hreyfingu?</span>
+                             <span class="accordion-arrow transition-transform duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </span>
+                        </summary>
+                        <p class="text-gray-600 mt-4">Nei, REFORM aðferðin er sett upp þannig að hún henti byrjendum einstaklega vel.</p>
                     </details>
       </div>
     </div>
@@ -821,7 +1168,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch max-w-6xl mx-auto">
                     <!-- Contact Form -->
                     <div class="bg-white rounded-2xl shadow-xl p-8 fade-in-up stagger-2 h-full">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Skráðu þig í námskeiðið</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Skrá mig</h3>
                         <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-6">
                             <input type="hidden" name="form-name" value="contact">
                             <input type="hidden" name="redirect" value="/thank-you.html">
@@ -829,13 +1176,29 @@
                                 <label>Ekki fylla út þennan reit: <input name="bot-field"></label>
                             </div>
                             <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nafn</label>
-                                <input type="text" name="name" id="name" required 
-                                    placeholder="Jón Jónsson"
+                                <label for="fornafn" class="block text-sm font-medium text-gray-700 mb-2">Fornafn</label>
+                                <input type="text" name="fornafn" id="fornafn" required 
+                                    placeholder="Jón"
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 hover:bg-white">
                             </div>
                             <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Netfang</label>
+                                <label for="eftirnafn" class="block text-sm font-medium text-gray-700 mb-2">Eftirnafn</label>
+                                <input type="text" name="eftirnafn" id="eftirnafn" required 
+                                    placeholder="Jónsson"
+                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 hover:bg-white">
+                            </div>
+                            <div>
+                                <label for="askriftarleid" class="block text-sm font-medium text-gray-700 mb-2">Áskriftarleið</label>
+                                <select id="askriftarleid" name="askriftarleid" required 
+                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 hover:bg-white">
+                                    <option value="" disabled selected>Veldu valkost</option>
+                                    <option value="Hefðbundin 90 daga REFORM aðferð">Hefðbundin 90 daga REFORM aðferð</option>
+                                    <option value="Persónuleg 90 daga REFORM aðferð">Persónuleg 90 daga REFORM aðferð</option>
+                                    <option value="REFORM Lifestyle">REFORM Lifestyle</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Tölvupóstur</label>
                                 <input type="email" name="email" id="email" required 
                                     placeholder="jon@example.is"
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 hover:bg-white">
@@ -850,24 +1213,20 @@
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 hover:bg-white" />
                             </div>
                             <div>
-                                <label for="heimilisfang" class="block text-sm font-medium text-gray-700 mb-2">Heimilisfang</label>
+                                <label for="heimilisfang" class="block text-sm font-medium text-gray-700 mb-2">Heimilisfang (götuheiti, númer, bæjarfélag)</label>
                                 <input type="text" id="heimilisfang" name="heimilisfang" required 
                                     placeholder="Laugavegur 1, 101 Reykjavík"
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 hover:bg-white" />
                             </div>
                             <div>
-                                <label for="program" class="block text-sm font-medium text-gray-700 mb-2">Veldu prógramm</label>
-                                <select id="program" name="program" required 
-                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 hover:bg-white">
-                                    <option value="" disabled selected>Veldu valkost</option>
-                                    <option value="90 daga program">90 daga program</option>
-                                    <option value="90 daga 1-1 prógram">90 daga 1-1 prógram</option>
-                                    <option value="90 daga Fjarþjálfun">90 daga Fjarþjálfun</option>
-                                </select>
+                                <label for="simanumer" class="block text-sm font-medium text-gray-700 mb-2">Símanúmer</label>
+                                <input type="tel" id="simanumer" name="simanumer" required 
+                                    placeholder="123-4567"
+                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 hover:bg-white" />
                             </div>
                             <button type="submit" 
                                 class="w-full bg-gradient-to-r from-sky-500 to-blue-600 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:from-sky-600 hover:to-blue-700 transition-all duration-300 hover:scale-105 shadow-lg">
-                                Senda skilaboð
+                                Skrá
                             </button>
                         </form>
                     </div>
@@ -886,13 +1245,13 @@
                                         </div>
                                         <div>
                                             <p class="font-semibold text-gray-900">Netfang</p>
-                                            <p class="text-sky-600"><a href="mailto:hello@reform.is" class="hover:underline">hello@reform.is</a></p>
+                                            <p class="text-sky-600"><a href="mailto:reform@reform.is" class="hover:underline">reform@reform.is</a></p>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="mt-8">
-                                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Fylgdu okkur</h3>
+                                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Hvar finnur þú okkur?</h3>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         <a href="https://instagram.com/r.e.f.o.r.m" target="_blank" rel="noopener noreferrer" 
                                             class="flex items-center gap-3 p-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-xl hover:scale-105 transition-all duration-300 shadow-lg">
@@ -912,10 +1271,7 @@
                                 </div>
 
                                 <div class="flex-1 flex items-center justify-center">
-                                    <div class="flex flex-col items-center">
-                                        <img src="img/reform_logo.png" alt="REFORM Logo" class="w-48 h-48 opacity-90">
-                                        <span class="mt-6 text-sky-600 font-bold text-5xl tracking-wide">REFORM</span>
-                                    </div>
+                                    <img src="img/reform_logo.png" alt="REFORM Logo" class="w-64 h-64 md:w-80 md:h-80 opacity-90">
                                 </div>
                             </div>
                         </div>
@@ -941,6 +1297,9 @@
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.343 4.527c.636-.247 1.363-.416 2.427-.465C9.793 2.013 10.147 2 12.315 2zm-1.161 1.545a3.37 3.37 0 00-3.37 3.37v5.455a3.37 3.37 0 003.37 3.37h5.455a3.37 3.37 0 003.37-3.37V6.915a3.37 3.37 0 00-3.37-3.37H11.154zM12 8.35a3.65 3.65 0 100 7.3 3.65 3.65 0 000-7.3zM12 14a2 2 0 110-4 2 2 0 010 4z" clip-rule="evenodd" /></svg>
                     </a>
                 </div>
+            </div>
+            <div class="mt-8 pt-4 border-t border-gray-700/50 text-center">
+                <p class="text-xs text-gray-600 tracking-wide">Búið til af <span class="text-sky-400 font-medium">Vefstæðinu, Oryx ehf.</span></p>
             </div>
         </div>
   </footer>
