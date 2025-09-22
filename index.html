@@ -304,6 +304,53 @@
             transform: scale(1.2);
         }
         
+        /* Custom REFORM Brand Colors */
+        .text-reform-blue {
+            color: #3187B6;
+        }
+        
+        .bg-reform-blue {
+            background-color: #3187B6;
+        }
+        
+        .bg-reform-blue-dark {
+            background-color: #2a6b8f;
+        }
+        
+        .border-reform-blue {
+            border-color: #3187B6;
+        }
+        
+        .hover\:text-reform-blue:hover {
+            color: #3187B6;
+        }
+        
+        .hover\:bg-reform-blue:hover {
+            background-color: #3187B6;
+        }
+        
+        .hover\:bg-reform-blue-dark:hover {
+            background-color: #2a6b8f;
+        }
+        
+        .from-reform-blue {
+            --tw-gradient-from: #3187B6;
+            --tw-gradient-to: rgba(49, 135, 182, 0);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+        }
+        
+        .to-reform-blue-dark {
+            --tw-gradient-to: #2a6b8f;
+        }
+        
+        .hover\:from-reform-blue-dark:hover {
+            --tw-gradient-from: #2a6b8f;
+        }
+        
+        .hover\:to-reform-blue:hover {
+            --tw-gradient-to: #3187B6;
+        }
+        
         /* Responsive adjustments for mobile */
         @media (max-width: 768px) {
             .testimonials-track {
@@ -436,26 +483,26 @@
             <!-- Logo -->
             <a href="#" class="flex items-center gap-3">
                 <img src="img/reform_logo.png" alt="REFORM Logo" class="w-10 h-10">
-                <span class="text-2xl font-bold text-sky-500">REFORM</span>
+                <span class="text-2xl font-bold text-reform-blue">REFORM</span>
             </a>
             
             <!-- Desktop Navigation - Only show on large screens -->
             <nav class="hidden lg:flex items-center space-x-6">
-                <a href="#about" class="text-gray-600 hover:text-sky-500 transition-colors text-base">Hvað er REFORM</a>
-                <a href="#method" class="text-gray-600 hover:text-sky-500 transition-colors text-base">90 daga REFORM aðferðin</a>
-                <a href="#program" class="text-gray-600 hover:text-sky-500 transition-colors text-base">Prógröm</a>
-                <a href="#coaches" class="text-gray-600 hover:text-sky-500 transition-colors text-base">Um okkur</a>
-                <a href="#testimonials" class="text-gray-600 hover:text-sky-500 transition-colors text-base">Umsagnir</a>
-                <a href="#faq" class="text-gray-600 hover:text-sky-500 transition-colors text-base">Algengar spurningar</a>
-                <a href="#contact" class="bg-sky-500 text-white px-4 py-2 rounded-full hover:bg-sky-600 transition-colors text-sm font-semibold">Skráning</a>
+                <a href="#about" class="text-gray-600 hover:text-reform-blue transition-colors text-base">Hvað er REFORM</a>
+                <a href="#method" class="text-gray-600 hover:text-reform-blue transition-colors text-base">90 daga REFORM aðferðin</a>
+                <a href="#program" class="text-gray-600 hover:text-reform-blue transition-colors text-base">Prógröm</a>
+                <a href="#coaches" class="text-gray-600 hover:text-reform-blue transition-colors text-base">Um okkur</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-reform-blue transition-colors text-base">Umsagnir</a>
+                <a href="#faq" class="text-gray-600 hover:text-reform-blue transition-colors text-base">Algengar spurningar</a>
+                <a href="#contact" class="bg-reform-blue text-white px-4 py-2 rounded-full hover:bg-reform-blue-dark transition-colors text-sm font-semibold">Skráning</a>
             </nav>
             
             <!-- Mobile/Tablet Menu Button -->
             <button id="mobile-menu-button" class="lg:hidden p-2 rounded-lg bg-white/20 hover:bg-white/30 transition-all duration-300 group backdrop-blur-sm">
                 <div class="relative w-6 h-6">
-                    <span class="absolute inset-0 w-6 h-0.5 bg-current transform transition-all duration-300 group-hover:bg-sky-400"></span>
-                    <span class="absolute inset-0 w-6 h-0.5 bg-current transform transition-all duration-300 translate-y-2 group-hover:bg-sky-400"></span>
-                    <span class="absolute inset-0 w-6 h-0.5 bg-current transform transition-all duration-300 translate-y-4 group-hover:bg-sky-400"></span>
+                    <span class="absolute inset-0 w-6 h-0.5 bg-current transform transition-all duration-300 group-hover:bg-reform-blue"></span>
+                    <span class="absolute inset-0 w-6 h-0.5 bg-current transform transition-all duration-300 translate-y-2 group-hover:bg-reform-blue"></span>
+                    <span class="absolute inset-0 w-6 h-0.5 bg-current transform transition-all duration-300 translate-y-4 group-hover:bg-reform-blue"></span>
                 </div>
             </button>
         </div>
@@ -464,55 +511,55 @@
         <div id="mobile-menu" class="hidden lg:hidden fixed top-0 left-0 right-0 w-full h-full z-40 transform transition-all duration-500 ease-out" style="background-color: #ffffff !important;">
             <!-- Close Button -->
             <div class="absolute top-6 right-6 z-50">
-                <button id="mobile-close-button" class="p-3 bg-sky-500 text-white rounded-full hover:bg-sky-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
+                <button id="mobile-close-button" class="p-3 bg-reform-blue text-white rounded-full hover:bg-reform-blue-dark transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                 </button>
             </div>
             
-            <nav class="flex flex-col items-center space-y-6 p-6 sm:p-8 border-b-2 border-sky-200 shadow-2xl min-h-screen pt-24" style="background-color: #ffffff !important;">
+            <nav class="flex flex-col items-center space-y-6 p-6 sm:p-8 border-b-2 border-gray-200 shadow-2xl min-h-screen pt-24" style="background-color: #ffffff !important;">
                 <div class="w-full max-w-sm space-y-4">
-                    <a href="#about" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg text-sm sm:text-base">
+                    <a href="#about" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-reform-blue hover:bg-gray-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg text-sm sm:text-base">
                         <span class="transition-all duration-300">Hvað er REFORM</span>
-                        <svg class="w-5 h-5 text-gray-400 group-hover:text-sky-500 transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-reform-blue transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                         </svg>
                     </a>
-                    <a href="#method" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg text-sm sm:text-base">
+                    <a href="#method" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-reform-blue hover:bg-gray-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg text-sm sm:text-base">
                         <span class="transition-all duration-300">90 daga REFORM aðferðin</span>
-                        <svg class="w-5 h-5 text-gray-400 group-hover:text-sky-500 transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-reform-blue transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                         </svg>
                     </a>
-                    <a href="#program" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg text-sm sm:text-base">
+                    <a href="#program" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-reform-blue hover:bg-gray-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg text-sm sm:text-base">
                         <span class="transition-all duration-300">Prógröm</span>
-                        <svg class="w-5 h-5 text-gray-400 group-hover:text-sky-500 transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-reform-blue transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                         </svg>
                     </a>
-                    <a href="#coaches" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg text-sm sm:text-base">
+                    <a href="#coaches" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-reform-blue hover:bg-gray-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg text-sm sm:text-base">
                         <span class="transition-all duration-300">Um okkur</span>
-                        <svg class="w-5 h-5 text-gray-400 group-hover:text-sky-500 transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-reform-blue transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                         </svg>
                     </a>
-                    <a href="#testimonials" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg text-sm sm:text-base">
+                    <a href="#testimonials" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-reform-blue hover:bg-gray-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg text-sm sm:text-base">
                         <span class="transition-all duration-300">Umsagnir</span>
-                        <svg class="w-5 h-5 text-gray-400 group-hover:text-sky-500 transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-reform-blue transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                         </svg>
                     </a>
-                    <a href="#faq" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg text-sm sm:text-base">
+                    <a href="#faq" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-reform-blue hover:bg-gray-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg text-sm sm:text-base">
                         <span class="transition-all duration-300">Algengar spurningar</span>
-                        <svg class="w-5 h-5 text-gray-400 group-hover:text-sky-500 transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-reform-blue transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                         </svg>
                     </a>
                 </div>
                 
                 <div class="w-full max-w-sm pt-4 border-t border-gray-200">
-                    <a href="#contact" class="flex items-center justify-center w-full px-8 py-4 bg-gradient-to-r from-sky-500 to-blue-600 text-white rounded-xl hover:from-sky-600 hover:to-blue-700 transition-all duration-500 font-semibold shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1 text-sm sm:text-base">
+                    <a href="#contact" class="flex items-center justify-center w-full px-8 py-4 bg-gradient-to-r from-reform-blue to-reform-blue-dark text-white rounded-xl hover:from-reform-blue-dark hover:to-reform-blue transition-all duration-500 font-semibold shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1 text-sm sm:text-base">
                         Skráning
                     </a>
       </div>
@@ -527,7 +574,7 @@
             
             <!-- Close Button -->
             <div class="relative z-10 top-6 right-6 float-right">
-                <button id="mobile-close-button" class="p-3 bg-sky-500 text-white rounded-full hover:bg-sky-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
+                <button id="mobile-close-button" class="p-3 bg-reform-blue text-white rounded-full hover:bg-reform-blue-dark transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
@@ -536,40 +583,40 @@
             
             <nav class="relative z-10 flex flex-col items-center space-y-6 p-8 min-h-screen pt-24 text-gray-800">
             <div class="w-full max-w-sm space-y-4">
-                <a href="#method" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg">
+                <a href="#method" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-reform-blue hover:bg-gray-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg">
                     <span class="transition-all duration-300">Aðferðin</span>
-                    <svg class="w-5 h-5 text-gray-400 group-hover:text-sky-500 transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 text-gray-400 group-hover:text-reform-blue transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                     </svg>
                 </a>
-                <a href="#program" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg">
+                <a href="#program" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-reform-blue hover:bg-gray-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg">
                     <span class="transition-all duration-300">Prógramm</span>
-                    <svg class="w-5 h-5 text-gray-400 group-hover:text-sky-500 transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 text-gray-400 group-hover:text-reform-blue transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                     </svg>
                 </a>
-                <a href="#coaches" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg">
+                <a href="#coaches" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-reform-blue hover:bg-gray-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg">
                     <span class="transition-all duration-300">Þjálfarar</span>
-                    <svg class="w-5 h-5 text-gray-400 group-hover:text-sky-500 transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 text-gray-400 group-hover:text-reform-blue transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                     </svg>
                 </a>
-                <a href="#testimonials" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg">
+                <a href="#testimonials" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-reform-blue hover:bg-gray-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg">
                     <span class="transition-all duration-300">Umsagnir</span>
-                    <svg class="w-5 h-5 text-gray-400 group-hover:text-sky-500 transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 text-gray-400 group-hover:text-reform-blue transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                     </svg>
                 </a>
-                <a href="#faq" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-sky-600 hover:bg-sky-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg">
+                <a href="#faq" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-reform-blue hover:bg-gray-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg">
                     <span class="transition-all duration-300">FAQ</span>
-                    <svg class="w-5 h-5 text-gray-400 group-hover:text-sky-500 transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 text-gray-400 group-hover:text-reform-blue transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                     </svg>
                 </a>
             </div>
             
             <div class="w-full max-w-sm pt-4 border-t border-gray-200">
-                <a href="#contact" class="flex items-center justify-center w-full px-8 py-4 bg-gradient-to-r from-sky-500 to-blue-600 text-white rounded-xl hover:from-sky-600 hover:to-blue-700 transition-all duration-500 font-semibold shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1">
+                <a href="#contact" class="flex items-center justify-center w-full px-8 py-4 bg-gradient-to-r from-reform-blue to-reform-blue-dark text-white rounded-xl hover:from-reform-blue-dark hover:to-reform-blue transition-all duration-500 font-semibold shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0 4.418 4.03-8 9-8s9 3.582 9 8z"/>
                     </svg>
@@ -599,10 +646,10 @@
                     Loksins allt á einum stað! Umbreyttu heilsunni þinni með REFORM aðferðinni
                 </p>
                 <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <a href="#program" class="w-full sm:w-auto bg-sky-500 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-sky-600 transition-transform hover:scale-105 shadow-lg fade-in-up stagger-3 hover-lift">
+                    <a href="#program" class="w-full sm:w-auto bg-reform-blue text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-reform-blue-dark transition-transform hover:scale-105 shadow-lg fade-in-up stagger-3 hover-lift">
                         Byrja í dag
                     </a>
-                    <a href="#method" class="w-full sm:w-auto bg-white text-sky-500 px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-50 transition-transform hover:scale-105 border border-gray-200 shadow-lg fade-in-up stagger-4 hover-lift">
+                    <a href="#method" class="w-full sm:w-auto bg-white text-reform-blue px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-50 transition-transform hover:scale-105 border border-gray-200 shadow-lg fade-in-up stagger-4 hover-lift">
                         Hvernig virkar þetta?
                     </a>
                 </div>
@@ -638,7 +685,7 @@
         </section>
 
         <!-- Method Section -->
-        <section id="method" class="py-20 bg-sky-50">
+        <section id="method" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold fade-in-up">Hvernig virkar 90 daga REFORM aðferðin?</h2>
@@ -647,25 +694,25 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
                     <!-- Step 1 -->
                     <div class="bg-white p-4 md:p-6 rounded-xl shadow-md hover-lift hover-glow fade-in-left stagger-1 flex flex-col h-full">
-                        <div class="text-2xl md:text-3xl font-extrabold text-sky-200 mb-2 md:mb-3 pulse-slow">01</div>
+                        <div class="text-2xl md:text-3xl font-extrabold text-reform-blue mb-2 md:mb-3 pulse-slow">01</div>
                         <h4 class="text-base md:text-lg font-bold mb-2 md:mb-3 text-gray-900">RESET Vikur 1-3</h4>
                         <p class="text-gray-600 text-xs md:text-sm leading-relaxed flex-grow">Núllstilling. Þú leggur grunninn að því að skapa nýjar venjur í hreyfingu og kynnist því hvað það er skemmtilegt að hreyfa sig!</p>
                     </div>
                     <!-- Step 2 -->
                     <div class="bg-white p-4 md:p-6 rounded-xl shadow-md hover-lift hover-glow fade-in-left stagger-2 flex flex-col h-full">
-                        <div class="text-2xl md:text-3xl font-extrabold text-sky-200 mb-2 md:mb-3 pulse-slow">02</div>
+                        <div class="text-2xl md:text-3xl font-extrabold text-reform-blue mb-2 md:mb-3 pulse-slow">02</div>
                         <h4 class="text-base md:text-lg font-bold mb-2 md:mb-3 text-gray-900">REBUILD Vikur 4-8</h4>
                         <p class="text-gray-600 text-xs md:text-sm leading-relaxed flex-grow">Þú byggir ofan á grunninn með aukinni þekkingu og betri svefngæðum. Svefninn er mikilvægasta grunnstoð lífsins og hefur margvísleg áhrif á daglegar venjur.</p>
                     </div>
                     <!-- Step 3 -->
                     <div class="bg-white p-4 md:p-6 rounded-xl shadow-md hover-lift hover-glow fade-in-left stagger-3 flex flex-col h-full">
-                        <div class="text-2xl md:text-3xl font-extrabold text-sky-200 mb-2 md:mb-3 pulse-slow">03</div>
+                        <div class="text-2xl md:text-3xl font-extrabold text-reform-blue mb-2 md:mb-3 pulse-slow">03</div>
                         <h4 class="text-base md:text-lg font-bold mb-2 md:mb-3 text-gray-900">REINFORCE Vikur 9-13</h4>
                         <p class="text-gray-600 text-xs md:text-sm leading-relaxed flex-grow">Þú tekur heilsuna þína á næsta stig með næringu þar sem við einföldum hvernig þú lítur á hvernig best sé að borða fyrir þig.</p>
       </div>
                     <!-- Step 4 -->
                     <div class="bg-white p-4 md:p-6 rounded-xl shadow-md hover-lift hover-glow fade-in-left stagger-4 flex flex-col h-full">
-                        <div class="text-2xl md:text-3xl font-extrabold text-sky-200 mb-2 md:mb-3 pulse-slow">04</div>
+                        <div class="text-2xl md:text-3xl font-extrabold text-reform-blue mb-2 md:mb-3 pulse-slow">04</div>
                         <h4 class="text-base md:text-lg font-bold mb-2 md:mb-3 text-gray-900">NÝTT UPPHAF</h4>
                         <p class="text-gray-600 text-xs md:text-sm leading-relaxed flex-grow">Í þessu skrefi hefur þú byggt upp sterkan grunn sem fylgir þér áfram. Árangurinn birtist í meiri orku, betri svefni og sterkari líkama og hugarfari. Framhaldið er í REFORM Lifestyle þar sem venjur skila enn meiri árangri.</p>
         </div>
@@ -673,7 +720,7 @@
       
       <!-- Call to action -->
       <div class="text-center mt-12 fade-in-up stagger-5">
-          <a href="#contact" class="inline-flex items-center gap-2 bg-sky-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-sky-600 transition-colors">
+          <a href="#contact" class="inline-flex items-center gap-2 bg-reform-blue text-white px-6 py-2 rounded-lg font-medium hover:bg-reform-blue-dark transition-colors">
               <span>Byrjaðu þína REFORM ferð</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
@@ -688,7 +735,7 @@
             <div class="container mx-auto px-4 md:px-6">
                 <div class="bg-gray-900 text-white rounded-2xl p-6 md:p-8 lg:p-12 fade-in-up">
                     <div class="text-center mb-6 md:mb-8 fade-in-up stagger-1">
-                        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-sky-400">Prógröm</h2>
+                        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-reform-blue">Prógröm</h2>
                         <p class="mt-3 md:mt-4 text-gray-300 text-sm md:text-base lg:text-lg max-w-4xl mx-auto">90 daga REFORM aðferðin hefur hjálpað einstaklingum að ná stórum heilsufarslegum markmiðum til lengri tíma. Hægt er velja hefðbundna eða persónulega nálgun eftir því hvað hentar þér.</p>
                         </div>
                     
@@ -696,35 +743,35 @@
                     <div class="block md:hidden space-y-4 fade-in-up stagger-2">
                         <!-- Hefðbundin nálgun Card -->
                         <div class="bg-gray-800 rounded-xl p-6 fade-in-up stagger-3">
-                            <h3 class="text-lg font-bold text-sky-400 text-center mb-4">Hefðbundin nálgun</h3>
+                            <h3 class="text-lg font-bold text-reform-blue text-center mb-4">Hefðbundin nálgun</h3>
                             <div class="space-y-3">
                                 <div class="flex items-center justify-between">
                                     <span class="text-gray-300 text-sm">Æfingaáætlun í appi</span>
-                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                     </div>
                                 <div class="flex items-center justify-between">
                                     <span class="text-gray-300 text-sm">Ítarlegar útskýringar og myndbönd</span>
-                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                     </div>
                                 <div class="flex items-center justify-between">
                                     <span class="text-gray-300 text-sm">Hreyfing - Næring - Svefn námskeið</span>
-                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
       </div>
                                 <div class="flex items-center justify-between">
                                     <span class="text-gray-300 text-sm">REFORM samfélagið á Facebook</span>
-                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
     </div>
                                 <div class="flex items-center justify-between">
                                     <span class="text-gray-300 text-sm">Aðgangur að þjálfurum</span>
-                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                                 </div>
@@ -742,66 +789,66 @@
                                 </div>
                                 <div class="flex items-center justify-between pt-3 border-t border-gray-700">
                                     <span class="text-white font-bold">Verð per mánuð</span>
-                                    <span class="text-sky-400 font-bold text-lg">34.990</span>
+                                    <span class="text-reform-blue font-bold text-lg">34.990</span>
                                 </div>
                             </div>
                         </div>
                         
                         <!-- Persónuleg nálgun Card -->
                         <div class="bg-gray-800 rounded-xl p-6 fade-in-up stagger-4">
-                            <h3 class="text-lg font-bold text-sky-400 text-center mb-4">Persónuleg nálgun</h3>
+                            <h3 class="text-lg font-bold text-reform-blue text-center mb-4">Persónuleg nálgun</h3>
                             <div class="space-y-3">
                                 <div class="flex items-center justify-between">
                                     <span class="text-gray-300 text-sm">Æfingaáætlun í appi</span>
-                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                 </div>
                                 <div class="flex items-center justify-between">
                                     <span class="text-gray-300 text-sm">Ítarlegar útskýringar og myndbönd</span>
-                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <span class="text-gray-300 text-sm">Hreyfing - Næring - Svefn námskeið</span>
-                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <span class="text-gray-300 text-sm">REFORM samfélagið á Facebook</span>
-                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <span class="text-gray-300 text-sm">Aðgangur að þjálfurum</span>
-                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <span class="text-gray-300 text-sm">Æfingaáætlun eftir þörfum</span>
-                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <span class="text-gray-300 text-sm">Sérsniðin næringarþjálfun</span>
-                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <span class="text-gray-300 text-sm">Vikuleg eftirfylgni</span>
-                                    <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                                 </div>
                                 <div class="flex items-center justify-between pt-3 border-t border-gray-700">
                                     <span class="text-white font-bold">Verð per mánuð</span>
-                                    <span class="text-sky-400 font-bold text-lg">84.990</span>
+                                    <span class="text-reform-blue font-bold text-lg">84.990</span>
                                 </div>
                             </div>
                         </div>
@@ -821,12 +868,12 @@
                                 <tr class="hover:bg-gray-800 transition-colors fade-in-up stagger-4">
                                     <td class="px-4 lg:px-6 py-3 lg:py-4 text-sm text-gray-300">Æfingaáætlun í appi</td>
                                     <td class="px-4 lg:px-6 py-3 lg:py-4 text-center">
-                                        <svg class="w-4 lg:w-5 h-4 lg:h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-4 lg:w-5 h-4 lg:h-5 text-reform-blue mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </td>
                                     <td class="px-4 lg:px-6 py-3 lg:py-4 text-center">
-                                        <svg class="w-4 lg:w-5 h-4 lg:h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-4 lg:w-5 h-4 lg:h-5 text-reform-blue mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </td>
@@ -834,12 +881,12 @@
                                 <tr class="hover:bg-gray-800 transition-colors fade-in-up stagger-5">
                                     <td class="px-6 py-4 text-sm text-gray-300">Ítarlegar útskýringar og myndbönd af öllum æfingunum í appinu</td>
                                     <td class="px-6 py-4 text-center">
-                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-reform-blue mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </td>
                                     <td class="px-6 py-4 text-center">
-                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-reform-blue mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </td>
@@ -847,12 +894,12 @@
                                 <tr class="hover:bg-gray-800 transition-colors">
                                     <td class="px-6 py-4 text-sm text-gray-300">Hreyfing - Næring - Svefn rafrænt námskeið</td>
                                     <td class="px-6 py-4 text-center">
-                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-reform-blue mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </td>
                                     <td class="px-6 py-4 text-center">
-                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-reform-blue mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </td>
@@ -860,12 +907,12 @@
                                 <tr class="hover:bg-gray-800 transition-colors">
                                     <td class="px-6 py-4 text-sm text-gray-300">REFORM samfélagið á Facebook</td>
                                     <td class="px-6 py-4 text-center">
-                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-reform-blue mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </td>
                                     <td class="px-6 py-4 text-center">
-                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-reform-blue mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </td>
@@ -873,12 +920,12 @@
                                 <tr class="hover:bg-gray-800 transition-colors">
                                     <td class="px-6 py-4 text-sm text-gray-300">Aðgangur að þjálfurum</td>
                                     <td class="px-6 py-4 text-center">
-                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-reform-blue mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </td>
                                     <td class="px-6 py-4 text-center">
-                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-reform-blue mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </td>
@@ -889,7 +936,7 @@
                                         <span class="text-gray-400 text-lg">-</span>
                                     </td>
                                     <td class="px-6 py-4 text-center">
-                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-reform-blue mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </td>
@@ -900,7 +947,7 @@
                                         <span class="text-gray-400 text-lg">-</span>
                                     </td>
                                     <td class="px-6 py-4 text-center">
-                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-reform-blue mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </td>
@@ -911,7 +958,7 @@
                                         <span class="text-gray-400 text-lg">-</span>
                                     </td>
                                     <td class="px-6 py-4 text-center">
-                                        <svg class="w-5 h-5 text-sky-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-reform-blue mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </td>
@@ -919,10 +966,10 @@
                                 <tr class="hover:bg-gray-800 transition-colors">
                                     <td class="px-6 py-4 text-sm font-semibold text-white">Verð per mánuð</td>
                                     <td class="px-6 py-4 text-center">
-                                        <span class="text-sky-400 font-bold text-lg">34.990</span>
+                                        <span class="text-reform-blue font-bold text-lg">34.990</span>
                                     </td>
                                     <td class="px-6 py-4 text-center">
-                                        <span class="text-sky-400 font-bold text-lg">84.990</span>
+                                        <span class="text-reform-blue font-bold text-lg">84.990</span>
                                     </td>
                                 </tr>
                             </tbody>
@@ -931,7 +978,7 @@
 
                      <!-- Call to Action for 90-day Program -->
                      <div class="text-center mt-8 fade-in-up stagger-6">
-                        <a href="#contact" class="bg-sky-500 text-white px-4 py-3 md:px-8 rounded-full font-semibold text-sm md:text-lg hover:bg-sky-600 transition-transform hover:scale-105 shadow-lg whitespace-nowrap">Skrá mig í 90 daga REFORM</a>
+                        <a href="#contact" class="bg-reform-blue text-white px-4 py-3 md:px-8 rounded-full font-semibold text-sm md:text-lg hover:bg-reform-blue-dark transition-transform hover:scale-105 shadow-lg whitespace-nowrap">Skrá mig í 90 daga REFORM</a>
                         </div>
                         
                     <!-- Additional Information -->
@@ -953,19 +1000,19 @@
                                 <!-- Key Features -->
                                 <div class="space-y-3 md:space-y-4 mb-6 md:mb-8">
                             <div class="flex items-center">
-                                <svg class="w-4 md:w-5 h-4 md:h-5 text-sky-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-4 md:w-5 h-4 md:h-5 text-reform-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
                                 <span class="text-gray-300 text-sm md:text-base">Æfingaáætlun í appi</span>
                             </div>
                             <div class="flex items-center">
-                                <svg class="w-4 md:w-5 h-4 md:h-5 text-sky-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-4 md:w-5 h-4 md:h-5 text-reform-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
                                 <span class="text-gray-300 text-sm md:text-base">Myndbönd og ítarlegar útskýringar af öllum æfingum í appi</span>
                             </div>
                             <div class="flex items-center">
-                                <svg class="w-4 md:w-5 h-4 md:h-5 text-sky-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-4 md:w-5 h-4 md:h-5 text-reform-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
                                 <span class="text-gray-300 text-sm md:text-base">REFORM samfélagið á Facebook</span>
@@ -997,7 +1044,7 @@
                         
                                 <!-- Pricing -->
                                 <div class="text-center lg:text-left">
-                                    <p class="text-sky-400 font-bold text-lg md:text-xl">Verð per mánuð 13.990</p>
+                                    <p class="text-reform-blue font-bold text-lg md:text-xl">Verð per mánuð 13.990</p>
                                 </div>
                             </div>
                             
@@ -1010,7 +1057,7 @@
                     
                     <!-- Call to Action -->
                     <div class="text-center mt-8 fade-in-up stagger-9">
-                        <a href="#contact" class="bg-sky-500 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-sky-600 transition-transform hover:scale-105 shadow-lg">Skrá mig núna</a>
+                        <a href="#contact" class="bg-reform-blue text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-reform-blue-dark transition-transform hover:scale-105 shadow-lg">Skrá mig núna</a>
                     </div>
       </div>
     </div>
@@ -1079,7 +1126,7 @@
                         
                     <!-- Navigation Buttons -->
                     <div class="flex justify-center items-center mt-8 space-x-4">
-                        <button id="prev-testimonial" class="p-3 bg-sky-500 text-white rounded-full hover:bg-sky-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
+                        <button id="prev-testimonial" class="p-3 bg-reform-blue text-white rounded-full hover:bg-reform-blue-dark transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                             </svg>
@@ -1087,7 +1134,7 @@
                         
                         <!-- Dots Indicator -->
                         <div class="flex space-x-2">
-                            <span class="w-3 h-3 bg-sky-500 rounded-full testimonial-dot active" data-testimonial="0"></span>
+                            <span class="w-3 h-3 bg-reform-blue rounded-full testimonial-dot active" data-testimonial="0"></span>
                             <span class="w-3 h-3 bg-gray-300 rounded-full testimonial-dot" data-testimonial="1"></span>
                             <span class="w-3 h-3 bg-gray-300 rounded-full testimonial-dot" data-testimonial="2"></span>
                             <span class="w-3 h-3 bg-gray-300 rounded-full testimonial-dot" data-testimonial="3"></span>
@@ -1096,7 +1143,7 @@
                             <span class="w-3 h-3 bg-gray-300 rounded-full testimonial-dot" data-testimonial="6"></span>
                         </div>
                         
-                        <button id="next-testimonial" class="p-3 bg-sky-500 text-white rounded-full hover:bg-sky-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
+                        <button id="next-testimonial" class="p-3 bg-reform-blue text-white rounded-full hover:bg-reform-blue-dark transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                             </svg>
@@ -1107,7 +1154,7 @@
   </section>
 
         <!-- FAQ Section -->
-        <section id="faq" class="py-20 bg-sky-50">
+        <section id="faq" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6 max-w-3xl">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold fade-in-up">Algengar Spurningar</h2>
@@ -1235,7 +1282,7 @@
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 hover:bg-white" />
                             </div>
                             <button type="submit" 
-                                class="w-full bg-gradient-to-r from-sky-500 to-blue-600 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:from-sky-600 hover:to-blue-700 transition-all duration-300 hover:scale-105 shadow-lg">
+                                class="w-full bg-gradient-to-r from-reform-blue to-reform-blue-dark text-white py-4 px-6 rounded-xl font-semibold text-lg hover:from-reform-blue-dark hover:to-reform-blue transition-all duration-300 hover:scale-105 shadow-lg">
                                 Skrá
                             </button>
                         </form>
@@ -1271,7 +1318,7 @@
                                             <span class="font-semibold">Instagram</span>
                                         </a>
                                         <a href="https://facebook.com/reform" target="_blank" rel="noopener noreferrer" 
-                                            class="flex items-center gap-3 p-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:scale-105 transition-all duration-300 shadow-lg">
+                                            class="flex items-center gap-3 p-4 bg-gradient-to-r from-reform-blue to-reform-blue-dark text-white rounded-xl hover:scale-105 transition-all duration-300 shadow-lg">
                                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                                             </svg>
@@ -1297,7 +1344,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <a href="#" class="flex items-center gap-3">
                     <img src="img/reform_logo.png" alt="REFORM Logo" class="w-8 h-8">
-                    <span class="text-2xl font-bold text-sky-500">REFORM</span>
+                    <span class="text-2xl font-bold text-reform-blue">REFORM</span>
                 </a>
                 <p class="mt-4 md:mt-0">&copy; <span id="current-year"></span> REFORM. Allur réttur áskilinn.</p>
                 <div class="flex items-center space-x-6 mt-4 md:mt-0">
@@ -1309,7 +1356,7 @@
                 </div>
             </div>
             <div class="mt-8 pt-4 border-t border-gray-700/50 text-center">
-                <p class="text-xs text-gray-600 tracking-wide">Búið til af <span class="text-sky-400 font-medium">Vefstæðinu, Oryx ehf.</span></p>
+                <p class="text-xs text-gray-600 tracking-wide">Búið til af <span class="text-reform-blue font-medium">Vefstæðinu, Oryx ehf.</span></p>
             </div>
         </div>
   </footer>
@@ -1481,10 +1528,10 @@
             // Update dots
             dots.forEach((dot, i) => {
                 if (i === index) {
-                    dot.classList.add('bg-sky-500');
+                    dot.classList.add('bg-reform-blue');
                     dot.classList.remove('bg-gray-300');
                 } else {
-                    dot.classList.remove('bg-sky-500');
+                    dot.classList.remove('bg-reform-blue');
                     dot.classList.add('bg-gray-300');
                 }
             });
