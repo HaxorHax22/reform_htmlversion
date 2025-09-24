@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skilmálar - REFORM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'reform-blue': '#0ea5e9',
+                        'reform-blue-dark': '#0284c7',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Fade in animations */
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Mobile Menu Animations */
+        #mobile-menu {
+            transform: translateY(-100vh) scale(0.95);
+            opacity: 0;
+        }
+        
+        #mobile-menu.show {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+        
+        /* Dropdown Menu Styles */
+        .dropdown-menu {
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .group:hover .dropdown-menu {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Dropdown colors based on header state */
+        .header-transparent .dropdown-menu {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-scrolled .dropdown-menu {
+            background: white;
+        }
+        
+        .header-transparent .dropdown-menu a {
+            color: #374151;
+        }
+        
+        .header-scrolled .dropdown-menu a {
+            color: #374151;
+        }
+        
+        .header-transparent .dropdown-menu a:hover {
+            background: rgba(14, 165, 233, 0.1);
+            color: #0ea5e9;
+        }
+        
+        .header-scrolled .dropdown-menu a:hover {
+            background: #f9fafb;
+            color: #0ea5e9;
+        }
+        
+        /* Mobile Menu Button Animation */
+        #mobile-menu-button.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        #mobile-menu-button.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        #mobile-menu-button.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        /* Header scroll-based color change */
+        .header-transparent {
+            background: transparent;
+        }
+        
+        .header-scrolled {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-transparent nav a,
+        .header-transparent .nav-text {
+            color: white;
+        }
+        
+        .header-scrolled nav a,
+        .header-scrolled .nav-text {
+            color: #374151;
+        }
+        
+        .header-transparent nav a:hover,
+        .header-transparent .nav-text:hover {
+            color: #0ea5e9;
+        }
+        
+        .header-scrolled nav a:hover,
+        .header-scrolled .nav-text:hover {
+            color: #0ea5e9;
+        }
+        
+        /* Dropdown colors based on header state */
+        .header-transparent .dropdown-menu {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-scrolled .dropdown-menu {
+            background: white;
+        }
+        
+        .header-transparent .dropdown-menu a {
+            color: #374151;
+        }
+        
+        .header-scrolled .dropdown-menu a {
+            color: #374151;
+        }
+        
+        .header-transparent .dropdown-menu a:hover {
+            background: rgba(14, 165, 233, 0.1);
+            color: #0ea5e9;
+        }
+        
+        .header-scrolled .dropdown-menu a:hover {
+            background: #f9fafb;
+            color: #0ea5e9;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Header -->
+    <header id="header" class="bg-white shadow-lg fixed top-0 left-0 right-0 z-50 transition-all duration-300 header-scrolled">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center -ml-2 md:-ml-6">
+                <img src="newimg/logo_lengra.png" alt="REFORM Logo" class="h-12">
+            </a>
+            
+            <!-- Desktop Navigation - Only show on extra large screens -->
+            <nav class="hidden xl:flex items-center space-x-6">
+                <a href="index.html#about" class="text-gray-700 hover:text-reform-blue transition-colors text-base">Hvað er REFORM</a>
+                <a href="index.html#method" class="text-gray-700 hover:text-reform-blue transition-colors text-base">90 daga REFORM aðferðin</a>
+                <!-- Prógröm Dropdown -->
+                <div class="relative group">
+                    <button class="text-gray-700 hover:text-reform-blue transition-colors text-base flex items-center">
+                        Prógröm
+                        <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 rounded-lg shadow-lg border border-gray-200 z-50">
+                        <div class="py-2">
+                            <a href="index.html#program" class="block px-4 py-2 transition-colors">90 daga REFORM</a>
+                            <a href="index.html#reform-lifestyle" class="block px-4 py-2 transition-colors">REFORM lifestyle</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html#coaches" class="text-gray-700 hover:text-reform-blue transition-colors text-base">Um okkur</a>
+                <a href="index.html#testimonials" class="text-gray-700 hover:text-reform-blue transition-colors text-base">Umsagnir</a>
+                <a href="index.html#faq" class="text-gray-700 hover:text-reform-blue transition-colors text-base">Algengar spurningar</a>
+                <a href="index.html#contact" class="bg-reform-blue text-white px-4 py-2 rounded-full hover:bg-reform-blue-dark transition-colors text-sm font-semibold">Hafa samband</a>
+            </nav>
+            
+            <!-- Mobile/Tablet Menu Button -->
+            <button id="mobile-menu-button" class="xl:hidden p-2 rounded-lg bg-white/20 hover:bg-white/30 transition-all duration-300 group backdrop-blur-sm">
+                <div class="relative w-6 h-6">
+                    <span class="absolute inset-0 w-6 h-0.5 bg-current transform transition-all duration-300 group-hover:bg-reform-blue"></span>
+                    <span class="absolute inset-0 w-6 h-0.5 bg-current transform transition-all duration-300 translate-y-2 group-hover:bg-reform-blue"></span>
+                    <span class="absolute inset-0 w-6 h-0.5 bg-current transform transition-all duration-300 translate-y-4 group-hover:bg-reform-blue"></span>
+                </div>
+            </button>
+        </div>
+        
+        <!-- Mobile/Tablet Navigation -->
+        <div id="mobile-menu" class="hidden xl:hidden fixed top-0 left-0 right-0 w-full h-full z-40 transform transition-all duration-500 ease-out" style="background-color: #ffffff !important;">
+            <!-- Close Button -->
+            <div class="absolute top-6 right-6 z-50">
+                <button id="mobile-close-button" class="p-3 bg-reform-blue text-white rounded-full hover:bg-reform-blue-dark transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <nav class="flex flex-col items-center space-y-6 p-6 sm:p-8 border-b-2 border-gray-200 shadow-2xl min-h-screen pt-24" style="background-color: #ffffff !important;">
+                <div class="w-full max-w-sm space-y-4">
+                    <a href="index.html#about" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-reform-blue hover:bg-gray-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg text-sm sm:text-base">
+                        <span class="transition-all duration-300">Hvað er REFORM</span>
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-reform-blue transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="index.html#method" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-reform-blue hover:bg-gray-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg text-sm sm:text-base">
+                        <span class="transition-all duration-300">90 daga REFORM aðferðin</span>
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-reform-blue transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="index.html#program" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-reform-blue hover:bg-gray-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg text-sm sm:text-base">
+                        <span class="transition-all duration-300">Prógröm</span>
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-reform-blue transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="index.html#coaches" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-reform-blue hover:bg-gray-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg text-sm sm:text-base">
+                        <span class="transition-all duration-300">Um okkur</span>
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-reform-blue transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="index.html#testimonials" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-reform-blue hover:bg-gray-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg text-sm sm:text-base">
+                        <span class="transition-all duration-300">Umsagnir</span>
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-reform-blue transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="index.html#faq" class="flex items-center justify-between w-full px-6 py-4 text-gray-700 hover:text-reform-blue hover:bg-gray-50 rounded-xl transition-all duration-300 font-medium group transform hover:scale-105 hover:shadow-lg text-sm sm:text-base">
+                        <span class="transition-all duration-300">Algengar spurningar</span>
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-reform-blue transition-all duration-300 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="w-full max-w-sm pt-4 border-t border-gray-200">
+                    <a href="index.html#contact" class="flex items-center justify-center w-full px-8 py-4 bg-gradient-to-r from-reform-blue to-reform-blue-dark text-white rounded-xl hover:from-reform-blue-dark hover:to-reform-blue transition-all duration-500 font-semibold shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1 text-sm sm:text-base">
+                        Hafa samband
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="py-20 bg-gradient-to-br from-sky-50 to-blue-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 fade-in-up">Skilmálar</h1>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto fade-in-up">Skilmálar og ákvæði fyrir þjónustu REFORM</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Terms Content -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="prose prose-lg max-w-none">
+                    <!-- Company Information -->
+                    <div class="bg-gray-50 rounded-2xl p-8 mb-8 fade-in-up">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">Fyrirtæki</h2>
+                        <div class="space-y-2 text-gray-700">
+                            <p><strong>Kristinn Jens Bjartmarsson</strong> (kt. 080592-2139)</p>
+                            <p><strong>Kolfinna Þórisdóttir</strong> (kt. 250595-3449)</p>
+                            <p>Hallakur 4a, 210 Garðabæ</p>
+                            <p><a href="mailto:reform@reform.is" class="text-reform-blue hover:underline">reform@reform.is</a></p>
+                        </div>
+                    </div>
+
+                    <!-- General Terms -->
+                    <div class="mb-8 fade-in-up">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Almennt</h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            REFORM mælir með því að viðskiptavinir REFORM lesi skilmála þessa til að tryggja að viðskipti og upplifun þín af REFORM sé ánægjuleg. Það ætti að stuðla að góðum samskiptum og fyrirbyggja misskilning í framtíðinni.
+                        </p>
+                    </div>
+
+                    <!-- Service Description -->
+                    <div class="mb-8 fade-in-up">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Þjónusta REFORM</h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            REFORM veitir þjónustu á sviði upplýsinga og aðgangs að vefsvæði fyrir einstaklinga. Um er að ræða aðgang að smáforriti sem heldur utan um æfingaáætlanir, samskipti við þjálfara, fræðsluefni og persónuupplýsingar notenda. Upplýsingarnar sem smáforritið fær svo hægt sé að stofna aðgang er fullt nafn viðkomandi, símanúmer, netfang og fæðingardagur og -ár. Einnig er aðgangur að sameiginlegu lokuðu vefsvæði fyrir viðskiptavini REFORM inni á Facebook. Skilmála smáforritsins sem og vefsvæðisins er hægt að finna á heimasíðum þeirra. Þjónustu þessari á vegum REFORM er að veita notendum aðhald og aðstoða þá við að ná sínum markmiðum tengd heilsu og bættri líðan.
+                        </p>
+                    </div>
+
+                    <!-- Cancellation Rights -->
+                    <div class="mb-8 fade-in-up">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Réttur til að hætta við pantanir</h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            REFORM áskilur sér rétt til að hætta við pantanir, t.d. vegna rangra verðupplýsinga og einnig að breyta verðum eða hætta að bjóða upp á vörutegundir fyrirvaralaust. REFORM áskilur sér rétt til að segja upp áskrift (án endurgreiðslu) ef samband milli notanda og þjálfara er ekki að ganga.
+                        </p>
+                    </div>
+
+                    <!-- Individual Access -->
+                    <div class="mb-8 fade-in-up">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Einstaklingsaðgangur</h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            Óheimilt er að deila áskrift með öðrum sem hefur ekki greitt fyrir aðgang að tiltekinni þjónustu.
+                        </p>
+                    </div>
+
+                    <!-- Copyright -->
+                    <div class="mb-8 fade-in-up">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Höfundaréttur</h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            Allt efni á heimasíðu reform.is, allt efni í smáforriti, fræðsluefni sem og annað efni sem seljandi, REFORM, býður upp á eða kann að deila með kaupanda er í eigu seljanda. Kaupanda er óheimilt að afrita efnið eða að deila því áfram með öðrum.
+                        </p>
+                    </div>
+
+                    <!-- Payment Obligation -->
+                    <div class="mb-8 fade-in-up">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Greiðsluskylda kaupanda</h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            Kaupandi sem skráir sig í mánaðarlega áskrift hjá REFORM skuldbindur sig til að greiða mánaðarlega (á 30 daga fresti) fyrir þjálfun og aðgang að smáforritinu.
+                        </p>
+                    </div>
+
+                    <!-- Payments -->
+                    <div class="mb-8 fade-in-up">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Greiðslur</h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            REFORM sendir greiðsluseðil í gegnum Payday. Payday fær fullt nafn, kennitölu og netfang notenda til þess að geta innheimt greiðslur. Skilmála Payday um meðferð persónuupplýsinga má finna á heimasíðu Payday.
+                        </p>
+                    </div>
+
+                    <!-- Refund Rights -->
+                    <div class="mb-8 fade-in-up">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Endurgreiðsluréttur</h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            Kaupandi hefur ekki rétt á endurgreiðslu eftir að búið er að greiða áskriftargjald enda er alltaf greitt fyrirfram fyrir verðmæti sem kaupandi fær. Endurgreiðsluréttur stofnast ekki ef þátttakandi hefur ekki nýtt sér þjónustuna sem keypt var.
+                        </p>
+                    </div>
+
+                    <!-- Subscription Cancellation -->
+                    <div class="mb-8 fade-in-up">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Uppsögn á áskrift</h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            Binditími í öllum áskriftum er lágmark tveir mánuðir. Eftir tvo mánuði er hægt að segja upp áskrift með mánaðar fyrirvara. Uppsögn þarf að berast fyrir upphafsdagsetningu næsta mánaðar í áskrift.
+                        </p>
+                    </div>
+
+                    <!-- Pricing -->
+                    <div class="mb-8 fade-in-up">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Verð</h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            Verð geta breyst án fyrirvara. Ef áskriftargjald (mánaðarlegar áskriftir) breytist mun REFORM senda viðskiptavinum sínum tilkynningu þar um og taka verðbreytingar gildi frá og með næstu mánaðarmótum.
+                        </p>
+                    </div>
+
+                    <!-- Personal Responsibility -->
+                    <div class="mb-8 fade-in-up">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Eigin ábyrgð</h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            Mikilvægt að hafa í huga að kaupandi ber ábyrgð á framkvæmd og niðurstöðu af þjónustu frá REFORM. Kaupandi ber ábyrgð á eigin heilsu og verður að treysta sér til að framkvæma æfingar og/eða til að nýta sér aðra þjónustu sem hann fær hjá REFORM. Ef um meiðsli eða önnur veikindi er að ræða hvetjum við iðkanda til að ráðfæra sig við sérfræðing áður en keypt er þjónusta hjá REFORM. Með kaupum á vöru eða þjónustu hjá REFORM staðfestir kaupandi að hann beri þessa ábyrgð (eigin áhættu).
+                        </p>
+                    </div>
+
+                    <!-- Confidentiality -->
+                    <div class="mb-8 fade-in-up">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Trúnaður</h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            Seljandi heitir kaupanda fullum trúnaði um allar þær upplýsingar sem kaupandi gefur upp í tengslum við viðskiptin. Upplýsingar verða ekki afhentar þriðja aðila undir neinum kringumstæðum. Aðgangi viðskiptavina að smáforriti er hægt að eyða hvenær sem er ef viðskiptavinur óskar þess.
+                        </p>
+                    </div>
+
+                    <!-- Legal Jurisdiction -->
+                    <div class="mb-8 fade-in-up">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Varnarþing</h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            Ákvæði og skilmála þessa ber að túlka í samræmi við íslensk lög. Komi upp ágreiningur eða telji einhver að hann eigi kröfu á hendur REFORM á grundvelli ákvæða og skilmála, verður slíkum ágreiningi eða kröfu vísað til meðferðar hjá íslenskum dómstólum.
+                        </p>
+                    </div>
+
+                    <!-- Changes -->
+                    <div class="mb-8 fade-in-up">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Breytingar</h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            REFORM áskilur sér rétt til þess að breyta skilmálum sínum. Breytingarnar taka gildi þegar uppfærðir skilmálar hafa verið birtir hér á heimasíðunni.
+                        </p>
+                    </div>
+
+                    <!-- Last Updated -->
+                    <div class="mt-12 pt-8 border-t border-gray-200 text-center">
+                        <p class="text-sm text-gray-500">Síðast uppfært 24.09.2025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <a href="index.html" class="flex items-center">
+                    <img src="newimg/logo_lengra.png" alt="REFORM Logo" class="h-8">
+                </a>
+                <p class="mt-4 md:mt-0">&copy; <span id="current-year"></span> REFORM. Allur réttur áskilinn.</p>
+                <div class="flex items-center space-x-6 mt-4 md:mt-0">
+                    <a href="skilmalar.html" class="hover:text-white">Skilmálar</a>
+                </div>
+            </div>
+            <div class="mt-8 pt-4 border-t border-gray-700/50 text-center">
+                <p class="text-xs text-gray-600 tracking-wide">Búið til af <span class="text-reform-blue font-medium">Vefstæðinu, Oryx ehf.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to set the current year in the footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('show');
+            mobileMenuButton.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileNavLinks = mobileMenu.querySelectorAll('a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('show');
+                mobileMenuButton.classList.remove('active');
+            });
+        });
+        
+        // Close mobile menu with close button
+        const mobileCloseButton = document.getElementById('mobile-close-button');
+        if (mobileCloseButton) {
+            mobileCloseButton.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('show');
+                mobileMenuButton.classList.remove('active');
+            });
+        }
+
+        
+    </script>
+</body>
+</html>
