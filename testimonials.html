@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REFORM Testimonials - Original Version</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles to apply the Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Testimonials Animation */
+        .testimonials-track {
+            animation: scroll 90s linear infinite;
+            width: calc(320px * 14 + 1.5rem * 14);
+        }
+        
+        .testimonial-card {
+            width: 320px;
+            min-width: 320px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-320px * 6 - 1.5rem * 6));
+            }
+        }
+        
+        /* Responsive adjustments for mobile */
+        @media (max-width: 768px) {
+            .testimonials-track {
+                animation-duration: 80s;
+                width: calc(280px * 14 + 1.5rem * 14);
+            }
+            
+            .testimonial-card {
+                width: 280px !important;
+                min-width: 280px !important;
+            }
+            
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-280px * 6 - 1.5rem * 6));
+                }
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-12 md:py-20 bg-white overflow-hidden">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold">Það sem REFORM meðlimir segja</h2>
+            </div>
+            
+            <div class="testimonials-container relative max-w-6xl mx-auto">
+                <!-- Testimonials Track -->
+                <div class="testimonials-track flex space-x-6 overflow-hidden">
+                    <!-- First Set of Testimonials -->
+                    <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
+                        <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"REFORM kom mér aftur á stað sem ég var áður á og þekki vel. Ég fann rytmann aftur og mesti ávinningurinn var að komast aftur í gang í fastri umgjörð"</p>
+                    </div>
+                    
+                    <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
+                        <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"Svefninn hjá mér stórlagaðist sem var mikill sigur fyrir mig"</p>
+                    </div>
+                    
+                    <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
+                        <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"Þetta eru frábærar æfingar og með því skemmtilegri sem ég hef gert. Ég hef aldrei verið svona skipulögð með æfingar, finn stóran mun á mér og líðanin frábær"</p>
+                    </div>
+                    
+                    <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
+                        <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"Þetta prógram hefur hvatt mig til að koma inn góðum venjum og minnir mig á að allt telur þegar kemur að hreyfingu, það er ekki allt eða ekkert. Er búin að vera ótrúlega ánægð með þetta og þetta er svo vandað og vel gert hjá ykkur! Snillingar!"</p>
+                    </div>
+                    
+                    <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
+                        <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"Aukinn styrkur og þol, líður vel í skrokknum og hef meira úthald en áður. Mjög ánægð með námskeiðið og uppleggið hjá ykkur"</p>
+                    </div>
+                    
+                    <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
+                        <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"Ég er ánægðust með að þetta prógram kom mér af stað í hreyfingu og ég lærði að ég get gert styrktaræfingar heima án þess að það sé brjáluð fyrirhöfn"</p>
+                    </div>
+                    
+                    <!-- Duplicate Set for Seamless Loop -->
+                    <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
+                        <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"REFORM kom mér aftur á stað sem ég var áður á og þekki vel. Ég fann rytmann aftur og mesti ávinningurinn var að komast aftur í gang í fastri umgjörð"</p>
+                    </div>
+                    
+                    <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
+                        <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"Svefninn hjá mér stórlagaðist sem var mikill sigur fyrir mig"</p>
+                    </div>
+                    
+                    <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
+                        <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"Þetta eru frábærar æfingar og með því skemmtilegri sem ég hef gert. Ég hef aldrei verið svona skipulögð með æfingar, finn stóran mun á mér og líðanin frábær"</p>
+                    </div>
+                    
+                    <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
+                        <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"Þetta prógram hefur hvatt mig til að koma inn góðum venjum og minnir mig á að allt telur þegar kemur að hreyfingu, það er ekki allt eða ekkert. Er búin að vera ótrúlega ánægð með þetta og þetta er svo vandað og vel gert hjá ykkur! Snillingar!"</p>
+                    </div>
+                    
+                    <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
+                        <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"Aukinn styrkur og þol, líður vel í skrokknum og hef meira úthald en áður. Mjög ánægð með námskeiðið og uppleggið hjá ykkur"</p>
+                    </div>
+                    
+                    <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
+                        <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"Ég er ánægðust með að þetta prógram kom mér af stað í hreyfingu og ég lærði að ég get gert styrktaræfingar heima án þess að það sé brjáluð fyrirhöfn"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

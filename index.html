@@ -338,53 +338,72 @@
             --tw-gradient-to: #3187B6;
         }
         
-        /* Testimonials Animation */
+        /* Swipeable Testimonials */
+        .testimonials-slider {
+            position: relative;
+        }
+        
         .testimonials-track {
-            animation: scroll 90s linear infinite;
-            width: calc(320px * 14 + 1.5rem * 14);
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .testimonial-slide {
+            min-width: 100%;
         }
         
         .testimonial-card {
-            width: 320px;
-            min-width: 320px;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            border: 1px solid #e2e8f0;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 240px;
+            min-height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .testimonial-card-long {
+            height: 240px;
+            min-height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .testimonial-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-2px);
         }
         
-        @keyframes scroll {
-            0% {
-                transform: translateX(calc(-320px * 7 - 1.5rem * 7));
+        /* Touch/Swipe Support */
+        .testimonials-slider {
+            touch-action: pan-y;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 640px) {
+            .testimonial-card,
+            .testimonial-card-long {
+                height: 140px;
+                min-height: 140px;
+                padding: 0.75rem;
             }
-            100% {
-                transform: translateX(0);
+            
+            .testimonials-slider {
+                margin: 0 -0.5rem;
             }
         }
         
-        /* Responsive adjustments for mobile */
-        @media (max-width: 768px) {
-            .testimonials-track {
-                animation-duration: 80s;
-                width: calc(280px * 14 + 1.5rem * 14);
+        @media (min-width: 641px) and (max-width: 768px) {
+            .testimonial-card,
+            .testimonial-card-long {
+                height: 180px;
+                min-height: 180px;
             }
-            
-            .testimonial-card {
-                width: 280px !important;
-                min-width: 280px !important;
-            }
-            
-            @keyframes scroll {
-                0% {
-                    transform: translateX(calc(-280px * 7 - 1.5rem * 7));
-                }
-                100% {
-                    transform: translateX(0);
-                }
+        }
+        
+        @media (min-width: 1024px) {
+            .testimonial-card,
+            .testimonial-card-long {
+                height: 240px;
+                min-height: 240px;
             }
         }
         
@@ -487,6 +506,16 @@
             }
         }
         
+        /* Dropdown Menu Styles */
+        .dropdown-menu {
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        .group:hover .dropdown-menu {
+            transform: translateY(0);
+        }
+        
         /* Mobile Menu Button Animation */
         #mobile-menu-button.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
@@ -498,7 +527,65 @@
         
         #mobile-menu-button.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -6px);
-    }
+        }
+        
+        /* Header scroll-based color change */
+        .header-transparent {
+            background: transparent;
+        }
+        
+        .header-scrolled {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-transparent nav a,
+        .header-transparent .nav-text {
+            color: white;
+        }
+        
+        .header-scrolled nav a,
+        .header-scrolled .nav-text {
+            color: #374151;
+        }
+        
+        .header-transparent nav a:hover,
+        .header-transparent .nav-text:hover {
+            color: #0ea5e9;
+        }
+        
+        .header-scrolled nav a:hover,
+        .header-scrolled .nav-text:hover {
+            color: #0ea5e9;
+        }
+        
+        /* Dropdown colors based on header state */
+        .header-transparent .dropdown-menu {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-scrolled .dropdown-menu {
+            background: white;
+        }
+        
+        .header-transparent .dropdown-menu a {
+            color: #374151;
+        }
+        
+        .header-scrolled .dropdown-menu a {
+            color: #374151;
+        }
+        
+        .header-transparent .dropdown-menu a:hover {
+            background: rgba(14, 165, 233, 0.1);
+            color: #0ea5e9;
+        }
+        
+        .header-scrolled .dropdown-menu a:hover {
+            background: #f9fafb;
+            color: #0ea5e9;
+        }
   </style>
 </head>
 <body id="top" class="bg-white text-gray-800">
@@ -513,12 +600,26 @@
             
             <!-- Desktop Navigation - Only show on extra large screens -->
             <nav class="hidden xl:flex items-center space-x-6">
-                <a href="#about" class="text-gray-600 hover:text-reform-blue transition-colors text-base">Hvað er REFORM</a>
-                <a href="#method" class="text-gray-600 hover:text-reform-blue transition-colors text-base">90 daga REFORM aðferðin</a>
-                <a href="#program" class="text-gray-600 hover:text-reform-blue transition-colors text-base">Prógröm</a>
-                <a href="#coaches" class="text-gray-600 hover:text-reform-blue transition-colors text-base">Um okkur</a>
-                <a href="#testimonials" class="text-gray-600 hover:text-reform-blue transition-colors text-base">Umsagnir</a>
-                <a href="#faq" class="text-gray-600 hover:text-reform-blue transition-colors text-base">Algengar spurningar</a>
+                <a href="#about" class="nav-text transition-colors text-base">Hvað er REFORM</a>
+                <a href="#method" class="nav-text transition-colors text-base">90 daga REFORM aðferðin</a>
+                <!-- Prógröm Dropdown -->
+                <div class="relative group">
+                    <button class="nav-text transition-colors text-base flex items-center">
+                        Prógröm
+                        <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <div class="py-2">
+                            <a href="#program" class="block px-4 py-2 transition-colors">90 daga REFORM</a>
+                            <a href="#reform-lifestyle" class="block px-4 py-2 transition-colors">REFORM lifestyle</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#coaches" class="nav-text transition-colors text-base">Um okkur</a>
+                <a href="#testimonials" class="nav-text transition-colors text-base">Umsagnir</a>
+                <a href="#faq" class="nav-text transition-colors text-base">Algengar spurningar</a>
                 <a href="#contact" class="bg-reform-blue text-white px-4 py-2 rounded-full hover:bg-reform-blue-dark transition-colors text-sm font-semibold">Hafa samband</a>
             </nav>
             
@@ -640,14 +741,6 @@
                 </a>
             </div>
             
-            <div class="w-full max-w-sm pt-4 border-t border-gray-200">
-                <a href="#contact" class="flex items-center justify-center w-full px-8 py-4 bg-gradient-to-r from-reform-blue to-reform-blue-dark text-white rounded-xl hover:from-reform-blue-dark hover:to-reform-blue transition-all duration-500 font-semibold shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0 4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                    </svg>
-                    Hafðu samband
-                </a>
-            </div>
         </nav>
     </div>
 
@@ -763,149 +856,149 @@
                         <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-reform-blue">Prógröm</h2>
                         </div>
                     
-                    <!-- Program Overview -->
+                    <!-- Program Overview
                     <div class="text-center mb-6 md:mb-8 fade-in-up stagger-2">
                         <div class="max-w-4xl mx-auto">
                             <div class="text-center space-y-6 md:space-y-8">
                                 <div>
-                                    <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">90 daga REFORM aðferðin</h3>
+                                    <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-4">90 daga REFORM aðferðin</h3>
                                     <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8">
                                         <div class="text-base md:text-lg text-gray-600">• Hefðbundin nálgun</div>
                                         <div class="text-base md:text-lg text-gray-600">• Persónuleg nálgun</div>
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl md:text-2xl font-bold text-gray-900">REFORM lifestyle áskrift</h3>
+                                    <h3 class="text-lg md:text-xl font-bold text-gray-900">REFORM lifestyle áskrift</h3>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    -->
                     
                     <div class="text-center mb-6 md:mb-8 fade-in-up stagger-3">
                         <p class="text-gray-600 text-sm md:text-base lg:text-lg max-w-4xl mx-auto">90 daga REFORM aðferðin hefur hjálpað einstaklingum að ná stórum heilsufarslegum markmiðum til lengri tíma. Hægt er velja hefðbundna eða persónulega nálgun eftir því hvað hentar þér.</p>
-                        </div>
-                    
+                    </div>   
                     <!-- Mobile Card Layout -->
                     <div class="block md:hidden space-y-6 fade-in-up stagger-2">
                         <!-- Hefðbundin nálgun Card -->
                         <div class="bg-gray-800 rounded-xl p-6 fade-in-up stagger-3 mx-2">
-                            <h3 class="text-lg font-bold text-reform-blue text-center mb-4">Hefðbundin nálgun</h3>
+                            <h3 class="text-xl font-bold text-reform-blue text-center mb-4">Hefðbundin nálgun</h3>
                             <div class="space-y-3">
                                 <div class="flex items-start justify-between">
-                                    <div class="text-gray-300 text-sm">
+                                    <div class="text-gray-300 text-lg">
                                         Æfingaáætlun í appi<br>
-                                        <span class="text-xs text-gray-400">Heimaprógram<br>Ræktarprógram</span>
+                                        <span class="text-lg text-gray-400">Heimaprógram<br>Ræktarprógram</span>
                                     </div>
                                     <svg class="w-4 h-4 text-reform-blue mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                     </div>
                                 <div class="flex items-center justify-between">
-                                    <span class="text-gray-300 text-sm">Æfingateygjur fyrir heimaprógram (heimsent)</span>
+                                    <span class="text-gray-300 text-lg">Æfingateygjur fyrir heimaprógram (heimsent)</span>
                                     <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                     </div>
                                 <div class="flex items-center justify-between">
-                                    <span class="text-gray-300 text-sm">Ítarlegar útskýringar og myndbönd</span>
+                                    <span class="text-gray-300 text-lg">Ítarlegar útskýringar og myndbönd</span>
                                     <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
       </div>
                                 <div class="flex items-center justify-between">
-                                    <span class="text-gray-300 text-sm">Hreyfing - Næring - Svefn námskeið</span>
+                                    <span class="text-gray-300 text-lg">Hreyfing - Næring - Svefn námskeið</span>
                                     <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
       </div>
                                 <div class="flex items-center justify-between">
-                                    <span class="text-gray-300 text-sm">REFORM samfélagið á Facebook</span>
+                                    <span class="text-gray-300 text-lg">REFORM samfélagið á Facebook</span>
                                     <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
     </div>
                                 <div class="flex items-center justify-between">
-                                    <span class="text-gray-300 text-sm">Aðgangur að þjálfurum</span>
+                                    <span class="text-gray-300 text-lg">Aðgangur að þjálfurum</span>
                                     <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                                 </div>
                                 <div class="flex items-center justify-between">
-                                    <span class="text-gray-300 text-sm">Æfingaáætlun eftir þörfum</span>
-                                    <span class="text-gray-400 text-sm">-</span>
+                                    <span class="text-gray-300 text-lg">Æfingaáætlun eftir þörfum</span>
+                                    <span class="text-gray-400 text-lg">-</span>
                                 </div>
                                 <div class="flex items-center justify-between">
-                                    <span class="text-gray-300 text-sm">Sérsniðin næringarþjálfun</span>
-                                    <span class="text-gray-400 text-sm">-</span>
+                                    <span class="text-gray-300 text-lg">Sérsniðin næringarþjálfun</span>
+                                    <span class="text-gray-400 text-lg">-</span>
                                 </div>
                                 <div class="flex items-center justify-between">
-                                    <span class="text-gray-300 text-sm">Vikuleg eftirfylgni</span>
-                                    <span class="text-gray-400 text-sm">-</span>
+                                    <span class="text-gray-300 text-lg">Vikuleg eftirfylgni</span>
+                                    <span class="text-gray-400 text-lg">-</span>
                                 </div>
                                 <div class="flex items-center justify-between pt-3 border-t border-gray-700">
                                     <span class="text-white font-bold">Verð per mánuð</span>
-                                    <span class="text-reform-blue font-bold text-lg">34.990</span>
+                                    <span class="text-reform-blue font-bold text-lg">29.990</span>
                                 </div>
                             </div>
                         </div>
                         
                         <!-- Persónuleg nálgun Card -->
                         <div class="bg-gray-800 rounded-xl p-6 fade-in-up stagger-4 mx-2">
-                            <h3 class="text-lg font-bold text-reform-blue text-center mb-4">Persónuleg nálgun</h3>
+                            <h3 class="text-xl font-bold text-reform-blue text-center mb-4">Persónuleg nálgun</h3>
                             <div class="space-y-3">
                                 <div class="flex items-start justify-between">
-                                    <div class="text-gray-300 text-sm">
+                                    <div class="text-gray-300 text-lg">
                                         Æfingaáætlun í appi<br>
-                                        <span class="text-xs text-gray-400">Heimaprógram<br>Ræktarprógram</span>
+                                        <span class="text-lg text-gray-400">Heimaprógram<br>Ræktarprógram</span>
                                     </div>
                                     <svg class="w-4 h-4 text-reform-blue mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                 </div>
                                 <div class="flex items-center justify-between">
-                                    <span class="text-gray-300 text-sm">Æfingateygjur fyrir heimaprógram (heimsent)</span>
+                                    <span class="text-gray-300 text-lg">Æfingateygjur fyrir heimaprógram (heimsent)</span>
                                     <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                 </div>
                                 <div class="flex items-center justify-between">
-                                    <span class="text-gray-300 text-sm">Ítarlegar útskýringar og myndbönd</span>
+                                    <span class="text-gray-300 text-lg">Ítarlegar útskýringar og myndbönd</span>
                                     <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                                 </div>
                                 <div class="flex items-center justify-between">
-                                    <span class="text-gray-300 text-sm">Hreyfing - Næring - Svefn námskeið</span>
+                                    <span class="text-gray-300 text-lg">Hreyfing - Næring - Svefn námskeið</span>
                                     <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                                 </div>
                                 <div class="flex items-center justify-between">
-                                    <span class="text-gray-300 text-sm">REFORM samfélagið á Facebook</span>
+                                    <span class="text-gray-300 text-lg">REFORM samfélagið á Facebook</span>
                                     <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                                 </div>
                                 <div class="flex items-center justify-between">
-                                    <span class="text-gray-300 text-sm">Aðgangur að þjálfurum</span>
+                                    <span class="text-gray-300 text-lg">Aðgangur að þjálfurum</span>
                                     <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                                 </div>
                                 <div class="flex items-center justify-between">
-                                    <span class="text-gray-300 text-sm">Æfingaáætlun eftir þörfum</span>
+                                    <span class="text-gray-300 text-lg">Æfingaáætlun eftir þörfum</span>
                                     <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                                 </div>
                                 <div class="flex items-center justify-between">
-                                    <span class="text-gray-300 text-sm">Sérsniðin næringarþjálfun</span>
+                                    <span class="text-gray-300 text-lg">Sérsniðin næringarþjálfun</span>
                                     <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                                 </div>
                                 <div class="flex items-center justify-between">
-                                    <span class="text-gray-300 text-sm">Vikuleg eftirfylgni</span>
+                                    <span class="text-gray-300 text-lg">Vikuleg eftirfylgni</span>
                                     <svg class="w-4 h-4 text-reform-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
@@ -931,9 +1024,9 @@
                             </thead>
                             <tbody class="divide-y divide-gray-700">
                                 <tr class="hover:bg-gray-800 transition-colors fade-in-up stagger-4">
-                                    <td class="px-4 lg:px-6 py-3 lg:py-4 text-sm text-gray-300">
+                                    <td class="px-4 lg:px-6 py-3 lg:py-4 text-lg text-gray-300">
                                         Æfingaáætlun í appi<br>
-                                        <span class="text-xs text-gray-400">Heimaprógram<br>Ræktarprógram</span>
+                                        <span class="text-lg text-gray-400">Heimaprógram<br>Ræktarprógram</span>
                                     </td>
                                     <td class="px-4 lg:px-6 py-3 lg:py-4 text-center">
                                         <svg class="w-4 lg:w-5 h-4 lg:h-5 text-reform-blue mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -947,7 +1040,7 @@
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-800 transition-colors fade-in-up stagger-5">
-                                    <td class="px-4 lg:px-6 py-3 lg:py-4 text-sm text-gray-300">Æfingateygjur fyrir heimaprógram (heimsent)</td>
+                                    <td class="px-4 lg:px-6 py-3 lg:py-4 text-lg text-gray-300">Æfingateygjur fyrir heimaprógram (heimsent)</td>
                                     <td class="px-4 lg:px-6 py-3 lg:py-4 text-center">
                                         <svg class="w-4 lg:w-5 h-4 lg:h-5 text-reform-blue mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -960,7 +1053,7 @@
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-800 transition-colors fade-in-up stagger-6">
-                                    <td class="px-6 py-4 text-sm text-gray-300">Ítarlegar útskýringar og myndbönd af öllum æfingunum í appinu</td>
+                                    <td class="px-6 py-4 text-base md:text-lg text-gray-300">Ítarlegar útskýringar og myndbönd af öllum æfingunum í appinu</td>
                                     <td class="px-6 py-4 text-center">
                                         <svg class="w-5 h-5 text-reform-blue mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -973,7 +1066,7 @@
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-800 transition-colors">
-                                    <td class="px-6 py-4 text-sm text-gray-300">Hreyfing - Næring - Svefn rafrænt námskeið</td>
+                                    <td class="px-6 py-4 text-base md:text-lg text-gray-300">Hreyfing - Næring - Svefn rafrænt námskeið</td>
                                     <td class="px-6 py-4 text-center">
                                         <svg class="w-5 h-5 text-reform-blue mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -986,7 +1079,7 @@
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-800 transition-colors">
-                                    <td class="px-6 py-4 text-sm text-gray-300">REFORM samfélagið á Facebook</td>
+                                    <td class="px-6 py-4 text-base md:text-lg text-gray-300">REFORM samfélagið á Facebook</td>
                                     <td class="px-6 py-4 text-center">
                                         <svg class="w-5 h-5 text-reform-blue mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -999,7 +1092,7 @@
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-800 transition-colors">
-                                    <td class="px-6 py-4 text-sm text-gray-300">Aðgangur að þjálfurum</td>
+                                    <td class="px-6 py-4 text-base md:text-lg text-gray-300">Aðgangur að þjálfurum</td>
                                     <td class="px-6 py-4 text-center">
                                         <svg class="w-5 h-5 text-reform-blue mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -1012,7 +1105,7 @@
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-800 transition-colors">
-                                    <td class="px-6 py-4 text-sm text-gray-300">Æfingaáætlun eftir þínum þörfum og markmiðum</td>
+                                    <td class="px-6 py-4 text-base md:text-lg text-gray-300">Æfingaáætlun eftir þínum þörfum og markmiðum</td>
                                     <td class="px-6 py-4 text-center">
                                         <span class="text-gray-400 text-lg">-</span>
                                     </td>
@@ -1023,7 +1116,7 @@
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-800 transition-colors">
-                                    <td class="px-6 py-4 text-sm text-gray-300">Sérsniðin næringarþjálfun</td>
+                                    <td class="px-6 py-4 text-base md:text-lg text-gray-300">Sérsniðin næringarþjálfun</td>
                                     <td class="px-6 py-4 text-center">
                                         <span class="text-gray-400 text-lg">-</span>
                                     </td>
@@ -1034,7 +1127,7 @@
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-800 transition-colors">
-                                    <td class="px-6 py-4 text-sm text-gray-300">Vikuleg eftirfylgni með þjálfara</td>
+                                    <td class="px-6 py-4 text-base md:text-lg text-gray-300">Vikuleg eftirfylgni með þjálfara</td>
                                     <td class="px-6 py-4 text-center">
                                         <span class="text-gray-400 text-lg">-</span>
                                     </td>
@@ -1047,7 +1140,7 @@
                                 <tr class="hover:bg-gray-800 transition-colors">
                                     <td class="px-6 py-4 text-sm font-semibold text-white">Verð per mánuð</td>
                                     <td class="px-6 py-4 text-center">
-                                        <span class="text-reform-blue font-bold text-lg">34.990</span>
+                                        <span class="text-reform-blue font-bold text-lg">29.990</span>
                                     </td>
                                     <td class="px-6 py-4 text-center">
                                         <span class="text-reform-blue font-bold text-lg">84.990</span>
@@ -1056,7 +1149,7 @@
                             </tbody>
                         </table>
                         <div class="mt-4 text-center">
-                            <p class="text-gray-400 text-xs">Við tökum aðeins inn 20 manns á hverju tímabili*</p>
+                            <p class="text-gray-400 text-xs">Við tökum aðeins inn 15 manns á hverju tímabili*</p>
                         </div>
                             </div>
                     </div>
@@ -1066,90 +1159,91 @@
                         <a href="#contact" class="bg-reform-blue text-white px-3 py-3 md:px-6 lg:px-8 rounded-full font-semibold text-xs sm:text-sm md:text-base lg:text-lg hover:bg-reform-blue-dark transition-transform hover:scale-105 shadow-lg whitespace-nowrap">Skrá mig í 90 daga REFORM aðferðina</a>
                     </div>
                     
-                    <!-- REFORM Lifestyle Transition -->
-                    <div class="mt-12 mb-8 text-center fade-in-up stagger-7">
-                        <div class="bg-white rounded-2xl p-8 md:p-12 shadow-lg border-2 border-gray-100 mx-2">
-                            <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Eftir 90 daga REFORM aðferðina er REFORM lifestyle</h3>
-                            <p class="text-lg md:text-xl text-gray-700 leading-relaxed">Ef þú ert ekki tilbúinn í 90 daga REFORM aðferðina þá er tilvalið að byrja á því að prufa REFORM lifestyle.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- REFORM Lifestyle Info -->
-                    <div class="mt-8 md:mt-12 bg-gray-800 rounded-xl p-6 md:p-8 fade-in-up stagger-8 mx-2">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                            <!-- Content -->
-                            <div>
-                                <h3 class="text-xl md:text-2xl font-bold text-white text-center lg:text-left mb-4 md:mb-6">REFORM lifestyle</h3>
-                                
-                                <!-- Key Features -->
-                                <div class="space-y-3 md:space-y-4 mb-6 md:mb-8">
-                            <div class="flex items-center">
-                                <svg class="w-4 md:w-5 h-4 md:h-5 text-reform-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span class="text-gray-300 text-sm md:text-base">Æfingaáætlun í appi</span>
-                            </div>
-                            <div class="flex items-center">
-                                <svg class="w-4 md:w-5 h-4 md:h-5 text-reform-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span class="text-gray-300 text-sm md:text-base">Æfingateygjur fyrir heimaprógram (heimsent)</span>
-                            </div>
-                            <div class="flex items-center">
-                                <svg class="w-4 md:w-5 h-4 md:h-5 text-reform-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span class="text-gray-300 text-sm md:text-base">Myndbönd og ítarlegar útskýringar af öllum æfingum í appi</span>
-                            </div>
-                            <div class="flex items-center">
-                                <svg class="w-4 md:w-5 h-4 md:h-5 text-reform-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span class="text-gray-300 text-sm md:text-base">REFORM samfélagið á Facebook</span>
-                        </div>
-                    </div>
-                    
-                        <!-- Weekly Content -->
-                        <div class="mb-6 md:mb-8">
-                            <h4 class="text-base md:text-lg font-bold text-white mb-3 md:mb-4">Í hverri viku koma nýjar:</h4>
-                            <div class="space-y-2">
+                </div>
+            </div>
+        </section>
+
+        <!-- REFORM Lifestyle Section -->
+        <section id="reform-lifestyle" class="py-12 md:py-20 bg-white">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold fade-in-up text-gray-900">REFORM lifestyle</h2>
+                    <p class="mt-4 md:mt-6 max-w-3xl mx-auto text-base md:text-lg text-gray-600 fade-in-up stagger-1">Eftir 90 daga REFORM aðferðina getur þú haldið áfram í REFORM lifestyle</p>
+                </div>
+                
+                <div class="bg-gray-800 rounded-xl p-6 md:p-8 fade-in-up stagger-2 mx-2">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                        <!-- Content -->
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-white text-center lg:text-left mb-4 md:mb-6">REFORM lifestyle</h3>
+                            
+                            <!-- Key Features -->
+                            <div class="space-y-3 md:space-y-4 mb-6 md:mb-8">
                                 <div class="flex items-center">
-                                    <div class="w-2 h-2 bg-sky-400 rounded-full mr-3 flex-shrink-0"></div>
-                                    <span class="text-gray-300 text-sm md:text-base">3x styrktaræfingar - heima</span>
+                                    <svg class="w-4 md:w-5 h-4 md:h-5 text-reform-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-300 text-lg md:text-base">Æfingaáætlun í appi</span>
                                 </div>
                                 <div class="flex items-center">
-                                    <div class="w-2 h-2 bg-sky-400 rounded-full mr-3 flex-shrink-0"></div>
-                                    <span class="text-gray-300 text-sm md:text-base">3x styrktaræfingar - líkamsræktarstöð</span>
+                                    <svg class="w-4 md:w-5 h-4 md:h-5 text-reform-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-300 text-lg md:text-base">Æfingateygjur fyrir heimaprógram (heimsent)</span>
                                 </div>
                                 <div class="flex items-center">
-                                    <div class="w-2 h-2 bg-sky-400 rounded-full mr-3 flex-shrink-0"></div>
-                                    <span class="text-gray-300 text-sm md:text-base">2x öræfingar ~15 mín</span>
+                                    <svg class="w-4 md:w-5 h-4 md:h-5 text-reform-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-300 text-lg md:text-base">Myndbönd og ítarlegar útskýringar af öllum æfingum í appi</span>
                                 </div>
                                 <div class="flex items-center">
-                                    <div class="w-2 h-2 bg-sky-400 rounded-full mr-3 flex-shrink-0"></div>
-                                    <span class="text-gray-300 text-sm md:text-base">2x liðleika æfingar ~15 mín</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                                <!-- Pricing -->
-                                <div class="text-center lg:text-left">
-                                    <p class="text-reform-blue font-bold text-lg md:text-xl">Verð per mánuð 13.990</p>
-                                  
+                                    <svg class="w-4 md:w-5 h-4 md:h-5 text-reform-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-300 text-lg md:text-base">REFORM samfélagið á Facebook</span>
                                 </div>
                             </div>
                             
-                            <!-- Image -->
-                            <div class="flex justify-center lg:justify-end mt-6 lg:mt-0">
-                                <img src="newimg/program.jpg" alt="REFORM Program" class="w-full max-w-sm lg:max-w-md rounded-2xl hover:scale-105 transition-transform duration-500 object-cover h-[20rem] sm:h-[24rem] lg:h-[32rem] program-image">
+                            <!-- Weekly Content -->
+                            <div class="mb-6 md:mb-8">
+                                <h4 class="text-base md:text-lg font-bold text-white mb-3 md:mb-4">Í hverri viku koma nýjar:</h4>
+                                <div class="space-y-2">
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 bg-sky-400 rounded-full mr-3 flex-shrink-0"></div>
+                                        <span class="text-gray-300 text-lg md:text-base">3x styrktaræfingar - heima</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 bg-sky-400 rounded-full mr-3 flex-shrink-0"></div>
+                                        <span class="text-gray-300 text-lg md:text-base">3x styrktaræfingar - líkamsræktarstöð</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 bg-sky-400 rounded-full mr-3 flex-shrink-0"></div>
+                                        <span class="text-gray-300 text-lg md:text-base">2x öræfingar ~15 mín</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 bg-sky-400 rounded-full mr-3 flex-shrink-0"></div>
+                                        <span class="text-gray-300 text-lg md:text-base">2x liðleika æfingar ~15 mín</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Pricing -->
+                            <div class="text-center lg:text-left">
+                                <p class="text-reform-blue font-bold text-xl md:text-2xl">Verð per mánuð 13.990</p>
                             </div>
                         </div>
+                        
+                        <!-- Image -->
+                        <div class="flex justify-center lg:justify-end mt-6 lg:mt-0">
+                            <img src="newimg/program.jpg" alt="REFORM Program" class="w-full max-w-sm lg:max-w-md rounded-2xl hover:scale-105 transition-transform duration-500 object-cover h-[20rem] sm:h-[24rem] lg:h-[32rem] program-image">
+                        </div>
                     </div>
-                    
-                    <!-- Call to Action -->
-                    <div class="text-center mt-8 fade-in-up stagger-9">
-                        <a href="#contact" class="bg-reform-blue text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-reform-blue-dark transition-transform hover:scale-105 shadow-lg">Skrá mig núna</a>
-                    </div>
+                </div>
+                
+                <!-- Call to Action -->
+                <div class="text-center mt-8 fade-in-up stagger-3">
+                    <a href="#contact" class="bg-reform-blue text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-reform-blue-dark transition-transform hover:scale-105 shadow-lg">Skrá mig núna</a>
                 </div>
             </div>
         </section>
@@ -1202,64 +1296,70 @@
   </section>
 
         <!-- Testimonials Section -->
-        <section id="testimonials" class="py-12 md:py-20 bg-white overflow-hidden">
+        <section id="testimonials" class="py-12 md:py-20 bg-white">
             <div class="container mx-auto px-4 md:px-6">
                 <div class="text-center mb-8 md:mb-12">
                     <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold fade-in-up">Það sem REFORM meðlimir segja</h2>
                 </div>
                 
-                <div class="testimonials-container relative max-w-6xl mx-auto">
-                    <!-- Testimonials Track -->
-                    <div class="testimonials-track flex space-x-6 overflow-hidden">
-                        <!-- First Set of Testimonials -->
-                        <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
-                            <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"REFORM kom mér aftur á stað sem ég var áður á og þekki vel. Ég fann rytmann aftur og mesti ávinningurinn var að komast aftur í gang í fastri umgjörð"</p>
+                <!-- Swipeable Testimonials Container -->
+                <div class="relative max-w-6xl mx-auto px-12 md:px-16">
+                    <!-- Testimonials Slider -->
+                    <div class="testimonials-slider overflow-hidden">
+                        <div class="testimonials-track flex transition-transform duration-500 ease-in-out" id="testimonials-track">
+                            <!-- Testimonial 1 -->
+                            <div class="testimonial-slide w-full flex-shrink-0 px-2 md:px-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                                    <div class="testimonial-card p-3 md:p-5 lg:p-6 rounded-2xl bg-gradient-to-br from-sky-50 to-blue-50 border border-sky-100 hover:shadow-lg transition-all duration-300">
+                                        <p class="text-gray-700 italic text-xs sm:text-sm md:text-base leading-relaxed text-center">"REFORM kom mér aftur á stað sem ég var áður á og þekki vel. Ég fann rytmann aftur og mesti ávinningurinn var að komast aftur í gang í fastri umgjörð"</p>
+                                    </div>
+                                    
+                                    <div class="testimonial-card p-3 md:p-5 lg:p-6 rounded-2xl bg-gradient-to-br from-sky-50 to-blue-50 border border-sky-100 hover:shadow-lg transition-all duration-300">
+                                        <p class="text-gray-700 italic text-xs sm:text-sm md:text-base leading-relaxed text-center">"Svefninn hjá mér stórlagaðist sem var mikill sigur fyrir mig"</p>
+                                    </div>
+                                    
+                                    <div class="testimonial-card p-3 md:p-5 lg:p-6 rounded-2xl bg-gradient-to-br from-sky-50 to-blue-50 border border-sky-100 hover:shadow-lg transition-all duration-300">
+                                        <p class="text-gray-700 italic text-xs sm:text-sm md:text-base leading-relaxed text-center">"Þetta eru frábærar æfingar og með því skemmtilegri sem ég hef gert. Ég hef aldrei verið svona skipulögð með æfingar, finn stóran mun á mér og líðanin frábær"</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Testimonial 2 -->
+                            <div class="testimonial-slide w-full flex-shrink-0 px-2 md:px-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                                    <div class="testimonial-card-long p-3 md:p-5 lg:p-6 rounded-2xl bg-gradient-to-br from-sky-50 to-blue-50 border border-sky-100 hover:shadow-lg transition-all duration-300">
+                                        <p class="text-gray-700 italic text-xs sm:text-xs md:text-sm leading-tight text-center">"Þetta prógram hefur hvatt mig til að koma inn góðum venjum og minnir mig á að allt telur þegar kemur að hreyfingu, það er ekki allt eða ekkert. Er búin að vera ótrúlega ánægð með þetta og þetta er svo vandað og vel gert hjá ykkur! Snillingar!"</p>
+                                    </div>
+                                    
+                                    <div class="testimonial-card p-3 md:p-5 lg:p-6 rounded-2xl bg-gradient-to-br from-sky-50 to-blue-50 border border-sky-100 hover:shadow-lg transition-all duration-300">
+                                        <p class="text-gray-700 italic text-xs sm:text-sm md:text-base leading-relaxed text-center">"Aukinn styrkur og þol, líður vel í skrokknum og hef meira úthald en áður. Mjög ánægð með námskeiðið og uppleggið hjá ykkur"</p>
+                                    </div>
+                                    
+                                    <div class="testimonial-card p-3 md:p-5 lg:p-6 rounded-2xl bg-gradient-to-br from-sky-50 to-blue-50 border border-sky-100 hover:shadow-lg transition-all duration-300">
+                                        <p class="text-gray-700 italic text-xs sm:text-sm md:text-base leading-relaxed text-center">"Ég er ánægðust með að þetta prógram kom mér af stað í hreyfingu og ég lærði að ég get gert styrktaræfingar heima án þess að það sé brjáluð fyrirhöfn"</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        
-                        <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
-                            <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"Svefninn hjá mér stórlagaðist sem var mikill sigur fyrir mig"</p>
-                        </div>
-                        
-                        <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
-                            <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"Þetta eru frábærar æfingar og með því skemmtilegri sem ég hef gert. Ég hef aldrei verið svona skipulögð með æfingar, finn stóran mun á mér og líðanin frábær"</p>
-                        </div>
-                        
-                        <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
-                            <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"Þetta prógram hefur hvatt mig til að koma inn góðum venjum og minnir mig á að allt telur þegar kemur að hreyfingu, það er ekki allt eða ekkert. Er búin að vera ótrúlega ánægð með þetta og þetta er svo vandað og vel gert hjá ykkur! Snillingar!"</p>
-                        </div>
-                        
-                        <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
-                            <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"Aukinn styrkur og þol, líður vel í skrokknum og hef meira úthald en áður. Mjög ánægð með námskeiðið og uppleggið hjá ykkur"</p>
-                        </div>
-                        
-                        <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
-                            <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"Ég er ánægðust með að þetta prógram kom mér af stað í hreyfingu og ég lærði að ég get gert styrktaræfingar heima án þess að það sé brjáluð fyrirhöfn"</p>
-                        </div>
-                        
-                        <!-- Duplicate Set for Seamless Loop -->
-                        <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
-                            <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"REFORM kom mér aftur á stað sem ég var áður á og þekki vel. Ég fann rytmann aftur og mesti ávinningurinn var að komast aftur í gang í fastri umgjörð"</p>
-                        </div>
-                        
-                        <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
-                            <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"Svefninn hjá mér stórlagaðist sem var mikill sigur fyrir mig"</p>
-                        </div>
-                        
-                        <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
-                            <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"Þetta eru frábærar æfingar og með því skemmtilegri sem ég hef gert. Ég hef aldrei verið svona skipulögð með æfingar, finn stóran mun á mér og líðanin frábær"</p>
-                        </div>
-                        
-                        <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
-                            <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"Þetta prógram hefur hvatt mig til að koma inn góðum venjum og minnir mig á að allt telur þegar kemur að hreyfingu, það er ekki allt eða ekkert. Er búin að vera ótrúlega ánægð með þetta og þetta er svo vandað og vel gert hjá ykkur! Snillingar!"</p>
-                        </div>
-                        
-                        <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
-                            <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"Aukinn styrkur og þol, líður vel í skrokknum og hef meira úthald en áður. Mjög ánægð með námskeiðið og uppleggið hjá ykkur"</p>
-                        </div>
-                        
-                        <div class="testimonial-card p-6 md:p-8 rounded-2xl flex-shrink-0 flex items-center justify-center">
-                            <p class="text-gray-700 italic text-sm md:text-base leading-relaxed text-center">"Ég er ánægðust með að þetta prógram kom mér af stað í hreyfingu og ég lærði að ég get gert styrktaræfingar heima án þess að það sé brjáluð fyrirhöfn"</p>
-                        </div>
+                    </div>
+                    
+                    <!-- Navigation Arrows -->
+                    <button id="prev-testimonial" class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-2 bg-white shadow-lg rounded-full p-2 md:p-3 hover:bg-gray-50 transition-colors duration-300 z-10">
+                        <svg class="w-4 h-4 md:w-6 md:h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    
+                    <button id="next-testimonial" class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-2 bg-white shadow-lg rounded-full p-2 md:p-3 hover:bg-gray-50 transition-colors duration-300 z-10">
+                        <svg class="w-4 h-4 md:w-6 md:h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                    
+                    <!-- Dots Indicator -->
+                    <div class="flex justify-center mt-6 md:mt-8 space-x-2">
+                        <button class="testimonial-dot w-2 h-2 md:w-3 md:h-3 rounded-full bg-reform-blue transition-all duration-300" data-slide="0"></button>
+                        <button class="testimonial-dot w-2 h-2 md:w-3 md:h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300" data-slide="1"></button>
                     </div>
                 </div>
             </div>
@@ -1318,15 +1418,12 @@
 
         <!-- Contact Form Section -->
         <section id="contact" class="py-20 bg-gradient-to-br from-sky-50 to-blue-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold fade-in-up">Hafðu Samband</h2>
-                </div>
+           
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch max-w-6xl mx-auto">
                     <!-- Contact Form -->
                     <div class="bg-white rounded-2xl shadow-xl p-8 fade-in-up stagger-2 h-full">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Skrá mig í áskrift</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Skrá mig</h3>
                         <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-6">
                             <input type="hidden" name="form-name" value="contact">
                             <input type="hidden" name="redirect" value="/thank-you.html">
@@ -1336,13 +1433,11 @@
                             <div>
                                 <label for="fornafn" class="block text-sm font-medium text-gray-700 mb-2">Fornafn</label>
                                 <input type="text" name="fornafn" id="fornafn" required 
-                                    placeholder="Jón"
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 hover:bg-white">
                             </div>
                             <div>
                                 <label for="eftirnafn" class="block text-sm font-medium text-gray-700 mb-2">Eftirnafn</label>
                                 <input type="text" name="eftirnafn" id="eftirnafn" required 
-                                    placeholder="Jónsson"
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 hover:bg-white">
                             </div>
                             <div>
@@ -1358,14 +1453,12 @@
                             <div>
                                 <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Tölvupóstur</label>
                                 <input type="email" name="email" id="email" required 
-                                    placeholder="jon@example.is"
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 hover:bg-white">
                             </div>
                             <div>
                                 <label for="kennitala" class="block text-sm font-medium text-gray-700 mb-2">Kennitala</label>
                                 <input type="text" id="kennitala" name="kennitala" required 
                                     pattern="[0-9]{6}-[0-9]{4}" 
-                                    placeholder="123456-7890"
                                     title="Kennitala verður að vera á forminu 123456-7890"
                                     maxlength="11"
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 hover:bg-white" />
@@ -1373,22 +1466,31 @@
                             <div>
                                 <label for="heimilisfang" class="block text-sm font-medium text-gray-700 mb-2">Heimilisfang</label>
                                 <input type="text" id="heimilisfang" name="heimilisfang" required 
-                                    placeholder="Laugavegur 1"
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 hover:bg-white" />
                             </div>
                             <div>
                                 <label for="postnumer" class="block text-sm font-medium text-gray-700 mb-2">Póstnúmer, bæjarfélag</label>
                                 <input type="text" id="postnumer" name="postnumer" required 
-                                    placeholder="101 Reykjavík"
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 hover:bg-white" />
                             </div>
                             <div>
                                 <label for="simanumer" class="block text-sm font-medium text-gray-700 mb-2">Símanúmer</label>
                                 <input type="tel" id="simanumer" name="simanumer" required 
-                                    placeholder="123-4567" maxlength="8"
+                                    maxlength="8"
                                     class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 hover:bg-white" />
                             </div>
-                            <p class="text-gray-500 text-xs text-center mb-4">Ég samþykki greiðsluskilmála og að reikningur verði sendur á kennitölu.</p>
+                            <div>
+                                <label for="markmid" class="block text-sm font-medium text-gray-700 mb-2">Hver eru þín heilsutengdu markmið?</label>
+                                <textarea id="markmid" name="markmid" rows="4" 
+                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-300 hover:bg-white resize-none"></textarea>
+                            </div>
+                            <div class="flex items-start space-x-3 mb-4">
+                                <input type="checkbox" id="terms" name="terms" required 
+                                    class="mt-1 w-4 h-4 text-reform-blue bg-gray-50 border-gray-300 rounded focus:ring-reform-blue focus:ring-2">
+                                <label for="terms" class="text-gray-500 text-xs leading-relaxed">
+                                    Ég samþykki greiðsluskilmála og að reikningur verði sendur á kennitölu.
+                                </label>
+                            </div>
                             <button type="submit" 
                                 class="w-full bg-gradient-to-r from-reform-blue to-reform-blue-dark text-white py-4 px-6 rounded-xl font-semibold text-lg hover:from-reform-blue-dark hover:to-reform-blue transition-all duration-300 hover:scale-105 shadow-lg">
                                 Skrá
@@ -1399,7 +1501,7 @@
                     <!-- Contact Info & Social Media (Combined) -->
                     <div class="fade-in-up stagger-3 h-full">
                         <div class="bg-white rounded-2xl shadow-xl p-8 h-full flex flex-col">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Aðrar leiðir að hafa samband</h3>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Hafa samband</h3>
                             <div class="flex flex-col h-full">
                                 <div class="space-y-4">
                                     <div class="flex items-center gap-4">
@@ -1412,6 +1514,17 @@
                                             <p class="font-semibold text-gray-900">Netfang</p>
                                             <p class="text-sky-600"><a href="mailto:reform@reform.is" class="hover:underline">reform@reform.is</a></p>
                                         </div>
+                                    </div>
+                                    
+                                    <!-- Facebook Messenger Link -->
+                                    <div class="mt-4">
+                                        <a href="https://m.me/61574984100889" target="_blank" rel="noopener noreferrer" 
+                                            class="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:scale-105 transition-all duration-300 shadow-lg">
+                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 0C5.373 0 0 4.975 0 11.11c0 3.497 1.745 6.6 4.47 8.607V24l4.086-2.242c1.09.301 2.246.464 3.444.464 6.627 0 12-4.974 12-11.11C24 4.975 18.627 0 12 0zm1.193 14.963l-3.056-3.259-5.963 3.259L10.733 8l3.13 3.259L19.8 8l-6.607 6.963z"/>
+                                            </svg>
+                                            <span class="font-semibold text-sm">Senda skilaboð á Messenger</span>
+                                        </a>
                                     </div>
                                 </div>
 
@@ -1435,7 +1548,7 @@
                                     </div>
                                 </div>
 
-                                <div class="flex-1 flex flex-col items-center justify-start space-y-6 pt-8">
+                                <div class="flex-1 flex flex-col items-center justify-center space-y-12 pt-8">
                                     <img src="newimg/logo_lengra.png" alt="REFORM Logo" class="h-16 w-auto max-w-xs md:h-28 md:max-w-none opacity-90">
                                     <img src="newimg/hero3.jpg" alt="REFORM Hero Image" class="w-full max-w-sm rounded-xl shadow-lg">
                                 </div>
@@ -1456,8 +1569,7 @@
                 </a>
                 <p class="mt-4 md:mt-0">&copy; <span id="current-year"></span> REFORM. Allur réttur áskilinn.</p>
                 <div class="flex items-center space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-white">Persónuvernd</a>
-                    <a href="#" class="hover:text-white">Skilmálar</a>
+                    <a href="Skilmálar.pdf" target="_blank" class="hover:text-white">Skilmálar</a>
                     <a href="#" class="hover:text-white" aria-label="Instagram">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.343 4.527c.636-.247 1.363-.416 2.427-.465C9.793 2.013 10.147 2 12.315 2zm-1.161 1.545a3.37 3.37 0 00-3.37 3.37v5.455a3.37 3.37 0 003.37 3.37h5.455a3.37 3.37 0 003.37-3.37V6.915a3.37 3.37 0 00-3.37-3.37H11.154zM12 8.35a3.65 3.65 0 100 7.3 3.65 3.65 0 000-7.3zM12 14a2 2 0 110-4 2 2 0 010 4z" clip-rule="evenodd" /></svg>
                     </a>
@@ -1502,13 +1614,18 @@
 
         // JavaScript for header transparency changes on scroll
         const header = document.getElementById('header');
+        const heroSection = document.querySelector('section.relative.h-screen');
+        
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.remove('header-transparent');
-                header.classList.add('header-opaque');
-            } else {
-                header.classList.remove('header-opaque');
-                header.classList.add('header-transparent');
+            if (heroSection) {
+                const heroHeight = heroSection.offsetHeight;
+                if (window.scrollY > heroHeight) {
+                    header.classList.remove('header-transparent');
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                    header.classList.add('header-transparent');
+                }
             }
         });
         
@@ -1648,6 +1765,114 @@
                 });
             });
         });
+
+        // Testimonials Slider Functionality
+        let currentTestimonialSlide = 0;
+        const totalTestimonialSlides = 2;
+        const testimonialsTrack = document.getElementById('testimonials-track');
+        const prevButton = document.getElementById('prev-testimonial');
+        const nextButton = document.getElementById('next-testimonial');
+        const dots = document.querySelectorAll('.testimonial-dot');
+
+        function updateTestimonialSlider() {
+            const translateX = -currentTestimonialSlide * 100;
+            testimonialsTrack.style.transform = `translateX(${translateX}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                if (index === currentTestimonialSlide) {
+                    dot.classList.remove('bg-gray-300');
+                    dot.classList.add('bg-reform-blue');
+                } else {
+                    dot.classList.remove('bg-reform-blue');
+                    dot.classList.add('bg-gray-300');
+                }
+            });
+        }
+
+        // Navigation buttons
+        prevButton.addEventListener('click', () => {
+            currentTestimonialSlide = (currentTestimonialSlide - 1 + totalTestimonialSlides) % totalTestimonialSlides;
+            updateTestimonialSlider();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentTestimonialSlide = (currentTestimonialSlide + 1) % totalTestimonialSlides;
+            updateTestimonialSlider();
+        });
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentTestimonialSlide = index;
+                updateTestimonialSlider();
+            });
+        });
+
+        // Touch/Swipe support
+        let startX = 0;
+        let startY = 0;
+        let distX = 0;
+        let distY = 0;
+        let threshold = 50; // minimum distance for swipe
+        let restraint = 100; // maximum vertical distance
+        let allowedTime = 300; // maximum time for swipe
+        let startTime = 0;
+
+        const testimonialsSlider = document.querySelector('.testimonials-slider');
+
+        testimonialsSlider.addEventListener('touchstart', (e) => {
+            const touch = e.touches[0];
+            startX = touch.clientX;
+            startY = touch.clientY;
+            startTime = new Date().getTime();
+        });
+
+        testimonialsSlider.addEventListener('touchend', (e) => {
+            const touch = e.changedTouches[0];
+            distX = touch.clientX - startX;
+            distY = touch.clientY - startY;
+            const elapsedTime = new Date().getTime() - startTime;
+
+            if (elapsedTime <= allowedTime && Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
+                if (distX > 0) {
+                    // Swipe right - previous slide
+                    prevButton.click();
+                } else {
+                    // Swipe left - next slide
+                    nextButton.click();
+                }
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevButton.click();
+            } else if (e.key === 'ArrowRight') {
+                nextButton.click();
+            }
+        });
+
+        // Auto-play (optional)
+        let autoPlayInterval;
+        
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                nextButton.click();
+            }, 5000); // Change slide every 5 seconds
+        }
+        
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+        
+        // Start auto-play
+        startAutoPlay();
+        
+        // Pause auto-play on hover
+        testimonialsSlider.addEventListener('mouseenter', stopAutoPlay);
+        testimonialsSlider.addEventListener('mouseleave', startAutoPlay);
 
   </script>
 
